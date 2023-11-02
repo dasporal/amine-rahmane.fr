@@ -5,9 +5,18 @@ import Card from '../components/Card.astro'
 
 <Layout title="Amine Rahmane - Accueil">
   <main>
-    <div class="w-screen h-screen grid grid-cols-3 grid-rows-3 gap-4 py-8 px-14">
+    <div
+      class="w-screen h-screen grid grid-cols-3 grid-rows-3 gap-4 py-8 px-14"
+    >
       <div class="row-span-2 col-span-2">
-        <Card />
+        <div
+          class="background-image bg-cover bg-center w-full h-full border border-accent rounded-xl p-12"
+        >
+          <div class="flex flex-col justify-end items-end font-title text-text">
+            <span class="text-5xl">Amine Rahmane</span>
+            <span class="text-3xl">Développeur et créateur d'identité</span>
+          </div>
+        </div>
       </div>
       <div class="row-span-3 flex flex-col justify-around items-center gap-4">
         <Card />
@@ -22,4 +31,12 @@ import Card from '../components/Card.astro'
   </main>
 </Layout>
 
-<style></style>
+<style>
+  .background-image {
+    background-image: linear-gradient(
+		rgba(6,0,10, 0.65),
+		rgba(6,0,10, 0.65)
+      ),
+      url('./src/assets/background-amine.jpg');
+  }
+</style>
