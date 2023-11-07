@@ -1,14 +1,74 @@
 ---
-//interface Props {
-//	title: string;
-//	body: string;
-//}
+interface Props {
+  title: string
+  body: string
+  cols?: number | string
+  rows?: number | string
+}
 
-// const { title, body } = Astro.props;
+const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
 ---
 
-<div class="bg-background w-full h-full border border-accent rounded-xl p-12">
-  <div class="text-text">hi</div>
+<div
+  class=`card relative w-full h-full rounded-xl overflow-hidden
+  before:rounded-[inherit] before:h-full before:content-[''] before:w-full before:absolute before:top-0 before:left-0 before:z-30 
+  before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
+  after:rounded-[inherit] after:h-full after:content-[''] after:w-full after:absolute after:top-0 after:left-0 after:z-10 
+  after:opacity-0 after:transition-opacity after:duration-500 group/cards-hover:after:opacity-100
+  bg-radial-gradient col-span-[${cols}] row-span-[${rows}]`
+>
+  <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
+  <div
+    class="content relative p-6 w-full h-full flex flex-col items-center justify-start bg-secondary bg-opacity-30 rounded-[inherit] z-20 m-[1px] bg-cover bg-center"
+  >
+    <h2 class="text-text font-title text-4xl font-bold uppercase">{title}</h2>
+    <div class="text-text font-title text-2xl">{body}</div>
+  </div>
 </div>
 
-<style></style>
+<style lang="scss">
+  .bg-radial-gradient::before {
+    background: radial-gradient(
+      400px circle at var(--mouse-x) var(--mouse-y),
+      rgba(71, 112, 174, 0.5),
+      transparent 40%
+    );
+  }
+
+  .bg-radial-gradient::after {
+    background: radial-gradient(
+      200px circle at var(--mouse-x) var(--mouse-y),
+      rgba(71, 112, 174, 0.3),
+      transparent 40%
+    );
+  }
+
+  .card {
+    background-image: linear-gradient(
+        rgba(12, 27, 29, 0.5),
+        rgba(12, 27, 29, 0.5)
+      ),
+      url('https://fastly.picsum.photos/id/353/400/400.jpg?hmac=mCXcDVleMo5t4wo0PdSoKbTE6ls1-akmVTTfDbOVilA');
+    background-size: 100% 100%;
+
+    &:hover {
+      z-index: 100;
+      .content {
+        transform: scale(1.02);
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .dotted-grid {
+    z-index: 1;
+    background: radial-gradient(rgba(255, 255, 255, 0.05) 9%, transparent 9%);
+    background-position: 0% 0%;
+    background-size: 8vmin 8vmin;
+  }
+
+  .card > .content {
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+  }
+</style>

@@ -13,8 +13,8 @@ export default {
       fontFamily: {
         title: 'Fira Sans, sans-serif',
         body: 'IBM Plex Sans, sans-serif',
-      },
-    },
+      }
+    }
   },
   plugins: [],
 }

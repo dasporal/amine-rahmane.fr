@@ -1,42 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
+import HeroCard from '../components/HeroCard.astro'
+import Thronocrigger from '../components/Thronocrigger.astro';
+import Modal from '../components/Modal.astro';
 ---
 
 <Layout title="Amine Rahmane - Accueil">
   <main>
     <div
-      class="w-screen h-screen grid grid-cols-3 grid-rows-3 gap-4 py-8 px-14"
+      class="card-container bg-background w-screen h-screen flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-3 gap-1 py-4 px-2 group/cards"
     >
-      <div class="row-span-2 col-span-2">
-        <div
-          class="background-image bg-cover bg-center w-full h-full border border-accent rounded-xl p-12"
-        >
-          <div class="flex flex-col justify-end items-end font-title text-text">
-            <span class="text-5xl">Amine Rahmane</span>
-            <span class="text-3xl">Développeur et créateur d'identité</span>
-          </div>
-        </div>
+      <div class="lg:row-span-2 lg:col-span-2">
+        <HeroCard />
       </div>
-      <div class="row-span-3 flex flex-col justify-around items-center gap-4">
-        <Card />
-        <Card />
-        <Card />
+      <div
+        class="lg:row-span-2  flex flex-col justify-around items-center gap-1"
+      >
+        <Thronocrigger title="Thronocrigger" body="Portfolio redesign" />
+        <Card title="Title" body="This is a body of text the is subject to change" />
       </div>
-      <div class="col-span-2 flex flex-row justify-around items-center gap-4">
-        <Card />
-        <Card />
+      <div
+        class="lg:col-span-3 flex flex-col justify-around items-center gap-1 lg:flex-row"
+      >
+        <Card title="test" body=":3" />
+        <Card title="2 columns" body=":3" cols={2} />
       </div>
     </div>
+    <Modal />
   </main>
 </Layout>
 
-<style>
-  .background-image {
-    background-image: linear-gradient(
-		rgba(6,0,10, 0.65),
-		rgba(6,0,10, 0.65)
-      ),
-      url('./src/assets/background-amine.jpg');
+<style></style>
+
+<script>
+  const cardContainer: HTMLDivElement = document.getElementsByClassName('card-container')[0]; 
+  cardContainer.onmousemove = (e: MouseEvent) => {
+    for (const card of document.querySelectorAll(
+      '.card'
+    ) as NodeListOf<HTMLElement>) {
+      const rect = card.getBoundingClientRect(),
+        x = e.clientX - rect.left,
+        y = e.clientY - rect.top
+
+      card.style.setProperty('--mouse-x', `${x}px`)
+      card.style.setProperty('--mouse-y', `${y}px`)
+    }
   }
-</style>
+</script>

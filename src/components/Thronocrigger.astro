@@ -1,0 +1,130 @@
+---
+interface Props {
+  title: string
+  body: string
+  cols?: number | string
+  rows?: number | string
+}
+
+const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
+---
+
+<div
+  id="thronocrigger"
+  class=`card cursor-pointer relative w-full h-full rounded-xl overflow-hidden
+  before:rounded-[inherit] before:h-full before:content-[''] before:w-full before:absolute before:top-0 before:left-0 before:z-30 
+  before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
+  after:rounded-[inherit] after:h-full after:content-[''] after:w-full after:absolute after:top-0 after:left-0 after:z-10 
+  after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100 group/thronocrigger
+  bg-radial-gradient col-span-[${cols}] row-span-[${rows}]`
+>
+  <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
+  <div
+    class="content relative p-6 w-full h-full bg-secondary bg-opacity-30 rounded-[inherit] z-20 m-[1px] bg-cover bg-center
+    grid grid-cols-3 grid-rows-3 place-items-center"
+  >
+    <div class="place-self-start">
+      <h2 class="text-text font-title text-4xl font-bold uppercase">{title}</h2>
+      <div class="text-text font-title text-2xl">{body}</div>
+    </div>
+    <div class="row-start-2 row-end-2 col-start-2 col-end-2">
+      <div class="avatar"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { navigate } from 'astro:transitions/client'
+  document.getElementById('thronocrigger')!.addEventListener('click', (e) => {
+    navigate('/projects/thronocrigger')
+  })
+</script>
+
+<style lang="scss">
+  .bg-radial-gradient::before {
+    background: radial-gradient(
+      400px circle at var(--mouse-x) var(--mouse-y),
+      rgba(71, 112, 174, 0.5),
+      transparent 40%
+    );
+  }
+
+  .bg-radial-gradient::after {
+    background: radial-gradient(
+      200px circle at var(--mouse-x) var(--mouse-y),
+      rgba(71, 112, 174, 0.3),
+      transparent 40%
+    );
+  }
+
+  .dotted-grid {
+    z-index: 1;
+    background: radial-gradient(rgba(255, 255, 255, 0.05) 9%, transparent 9%);
+    background-position: 0% 0%;
+    background-size: 8vmin 8vmin;
+  }
+
+  .card:hover {
+    z-index: 100;
+    .content {
+      transform: scale(1.02);
+      transition: transform 0.2s ease-in-out;
+    }
+    .avatar {
+      &::before,
+      &::after {
+        animation: glitch-effect (random(5) + s) infinite linear
+          alternate-reverse;
+      }
+    }
+  }
+
+  .card > .content {
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+  }
+
+  .avatar {
+    position: relative;
+    width: clamp(180px, 4vw, 400px);
+    height: clamp(180px, 4vw, 400px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../assets/thronocrigger/avatar.png');
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: clamp(180px, 4vw, 400px);
+      height: clamp(180px, 4vw, 400px);
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation-play-state: paused;
+    }
+    &::before {
+      left: -6px;
+      background-image: url('../assets/thronocrigger/avatar-bg-1.png');
+    }
+    &::after {
+      left: 6px;
+      background-image: url('../assets/thronocrigger/avatar-bg-2.png');
+    }
+  }
+
+  $steps: 17;
+  @keyframes glitch-effect {
+    @for $i from 0 through $steps {
+      #{percentage($i*calc(1/$steps))} {
+        clip: rect(random(180) + px, 400px, random(180) + px, 0);
+      }
+    }
+  }
+</style>
