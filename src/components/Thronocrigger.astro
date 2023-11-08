@@ -35,9 +35,15 @@ const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
 
 <script>
   import { navigate } from 'astro:transitions/client'
-  document.getElementById('thronocrigger')!.addEventListener('click', (e) => {
-    navigate('/projects/thronocrigger')
-  })
+
+  const handleClick = () => {
+    document.getElementById('thronocrigger')!.addEventListener('click', (e) => {
+      console.log('click')
+      navigate('/projects/thronocrigger')
+    })
+  }
+
+  document.addEventListener('astro:page-load', handleClick)
 </script>
 
 <style lang="scss">

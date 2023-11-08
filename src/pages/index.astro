@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import HeroCard from '../components/HeroCard.astro'
-import Thronocrigger from '../components/Thronocrigger.astro';
+import Thronocrigger from '../components/Thronocrigger.astro'
 ---
 
 <Layout title="Amine Rahmane - Accueil">
@@ -11,13 +11,19 @@ import Thronocrigger from '../components/Thronocrigger.astro';
       class="card-container bg-background w-screen h-screen flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-3 gap-1 py-4 px-2 group/cards"
     >
       <div class="lg:row-span-2 lg:col-span-2">
-        <HeroCard />
+        <HeroCard transition:name="header" />
       </div>
       <div
-        class="lg:row-span-2  flex flex-col justify-around items-center gap-1"
+        class="lg:row-span-2 flex flex-col justify-around items-center gap-1"
       >
-        <Thronocrigger title="Thronocrigger" body="Portfolio redesign" />
-        <Card title="Title" body="This is a body of text the is subject to change" />
+        <Thronocrigger
+          title="Thronocrigger"
+          body="Portfolio redesign"
+        />
+        <Card
+          title="Title"
+          body="This is a body of text the is subject to change"
+        />
       </div>
       <div
         class="lg:col-span-3 flex flex-col justify-around items-center gap-1 lg:flex-row"
@@ -32,17 +38,24 @@ import Thronocrigger from '../components/Thronocrigger.astro';
 <style></style>
 
 <script>
-  const cardContainer: HTMLElement = document.getElementsByClassName('card-container')[0] as HTMLElement; 
-  cardContainer.onmousemove = (e: MouseEvent) => {
-    for (const card of document.querySelectorAll(
-      '.card'
-    ) as NodeListOf<HTMLElement>) {
-      const rect = card.getBoundingClientRect(),
-        x = e.clientX - rect.left,
-        y = e.clientY - rect.top
+  const handleCards = () => {
+    const cardContainer: HTMLElement = document.getElementsByClassName(
+      'card-container'
+    )[0] as HTMLElement;
 
-      card.style.setProperty('--mouse-x', `${x}px`)
-      card.style.setProperty('--mouse-y', `${y}px`)
+    cardContainer.onmousemove = (e: MouseEvent) => {
+      for (const card of document.querySelectorAll(
+        '.card'
+      ) as NodeListOf<HTMLElement>) {
+        const rect = card.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top
+
+        card.style.setProperty('--mouse-x', `${x}px`)
+        card.style.setProperty('--mouse-y', `${y}px`)
+      }
     }
   }
+
+  document.addEventListener('astro:page-load', handleCards)
 </script>
