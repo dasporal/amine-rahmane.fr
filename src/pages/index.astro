@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import HeroCard from '../components/HeroCard.astro'
 import Thronocrigger from '../components/Thronocrigger.astro';
-import Modal from '../components/Modal.astro';
 ---
 
 <Layout title="Amine Rahmane - Accueil">
@@ -34,7 +33,7 @@ import Modal from '../components/Modal.astro';
 <style></style>
 
 <script>
-  const cardContainer: HTMLDivElement = document.getElementsByClassName('card-container')[0]; 
+  const cardContainer: HTMLElement = document.getElementsByClassName('card-container')[0] as HTMLElement; 
   cardContainer.onmousemove = (e: MouseEvent) => {
     for (const card of document.querySelectorAll(
       '.card'
