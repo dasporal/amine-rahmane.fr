@@ -94,24 +94,23 @@ Praesent nec ligula vitae libero volutpat finibus eget ut dui. Sed sed vehicula 
           content: '';
           position: absolute;
           width: 100%;
-          transform: scaleX(0);
+          transform: scaleX(0.01);
           height: 2px;
           bottom: 0;
           left: 0;
           background-color: #f0dddb;
-          transform-origin: bottom right;
-          animation: underline 1.3s ease-in-out forwards;
+          transform-origin: bottom left;
+          animation: underline 1.2s ease-in-out forwards;
+          animation-delay: 0.2s;
         }
       }
 
       @keyframes underline {
         0% {
-          transform: scaleX(0);
-          transform-origin: bottom left;
+          transform: scaleX(0.01);
         }
         100% {
           transform: scaleX(1);
-          transform-origin: bottom left;
         }
       }
     </style>
