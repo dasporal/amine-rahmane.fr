@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import nodejs from '@astrojs/node';
 import tailwind from "@astrojs/tailwind";
 import NetlifyCMS from 'astro-netlify-cms';
 
@@ -16,12 +17,19 @@ export default defineConfig({
       local_backend: true,
       site_url: 'https://amine-rahmane.fr/',
       display_url: 'https://amine-rahmane.fr/',
-      media_folder: 'static/assets',
+      media_folder: 'src/content/assets',
+      slug: {
+        encoding: "ascii",
+        clean_accents: true,
+        sanitize_replacement: "-"
+      },
       collections: [
         {
-          name: 'works',
-          label: 'Works',
-          folder: 'static/works',
+          name: 'projects',
+          label: 'Projects',
+          identifier_field: 'project',
+          slug: "{{company}}",
+          folder: 'src/content/projects',
           create: true,
           delete: true,
           fields: [
