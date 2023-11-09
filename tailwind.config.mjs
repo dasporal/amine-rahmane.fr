@@ -13,8 +13,32 @@ export default {
       fontFamily: {
         title: 'Fira Sans, sans-serif',
         body: 'IBM Plex Sans, sans-serif',
-      }
+      },
+      typography: ({ theme }) => ({
+        text: {
+          css: {
+            '--tw-prose-body': theme('colors.text'),
+            '--tw-prose-headings': theme('colors.text'),
+            '--tw-prose-lead': theme('colors.text'),
+            '--tw-prose-links': theme('colors.text'),
+            '--tw-prose-bold': theme('colors.text'),
+            '--tw-prose-counters': theme('colors.text'),
+            '--tw-prose-bullets': theme('colors.text'),
+            '--tw-prose-hr': theme('colors.text'),
+            '--tw-prose-quotes': theme('colors.text'),
+            '--tw-prose-quote-borders': theme('colors.text'),
+            '--tw-prose-captions': theme('colors.text'),
+            '--tw-prose-code': theme('colors.text'),
+            '--tw-prose-pre-code': theme('colors.text'),
+            '--tw-prose-pre-bg': theme('colors.text'),
+            '--tw-prose-th-borders': theme('colors.text'),
+            '--tw-prose-td-borders': theme('colors.text')
+          },
+        },
+      })
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

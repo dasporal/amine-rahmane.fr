@@ -23,11 +23,11 @@ const { frontmatter } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{frontmatter.title}</title>
+    <title>Amine Rahmane - {frontmatter.company}</title>
     <ViewTransitions />
   </head>
   <body class="bg-background">
-    <main class="h-screen w-screen flex justify-center items-center z-20">
+    <main class="h-screen w-screen flex justify-center items-center z-20 pb-8">
       <div
         class="flex flex-col justify-center items-center h-full w-full gap-4 lg:w-2/3"
       >
@@ -37,20 +37,24 @@ const { frontmatter } = Astro.props
         <div class="flex flex-row w-full h-full gap-8">
           <div class="w-2/3">
             <div
-              class="bg-background border opacity-100 w-full h-full flex flex-col rounded-xl bg-cover bg-center p-8 gap-3"
+              class="body-content bg-background shadow shadow-primary opacity-100 w-full h-full flex flex-col rounded-xl bg-cover bg-center p-8 gap-3"
             >
               <div
                 class=`w-full flex flex-col rounded-xl bg-cover bg-center p-8 gap-3`
               >
-                <h1 class="title font-title text-4xl w-max">
+                <h1 class="title font-title prose prose-text text-6xl w-max">
                   {frontmatter.title}
                 </h1>
-                <h2 class="font-title text-2xl">{frontmatter.company}</h2>
+                <h2 class="font-title prose prose-text text-2xl">
+                  {frontmatter.company}
+                </h2>
               </div>
-              <slot />
+              <div class="prose prose-text min-w-full">
+                <slot />
+              </div>
             </div>
           </div>
-          <div class="w-1/3 flex flex-col gap-4 py-2">
+          <div class="w-1/3  card-container flex flex-col gap-4 py-2">
             <Card title="test" body=":3" />
             <Card title="Data" body=":3" />
             <Card title="Data" body=":3" />
@@ -61,14 +65,17 @@ const { frontmatter } = Astro.props
       </div>
     </main>
     <style lang="scss" is:global>
-      p,
       h1,
       h2,
       h3,
       h4,
       h5,
       h6 {
-        @apply text-text;
+        @apply font-title;
+      }
+
+      ul {
+        @apply list-disc marker:text-accent font-bold
       }
 
       main {
@@ -80,8 +87,12 @@ const { frontmatter } = Astro.props
         background-size: 8vmin 8vmin;
       }
 
+      .body-content {
+        transform: translateX(-100px);
+        animation: fade 0.4s ease-in-out forwards;
+      }
+
       .title {
-        display: inline-block;
         position: relative;
         color: #f0dddb;
 
@@ -95,8 +106,7 @@ const { frontmatter } = Astro.props
           left: 0;
           background-color: #f0dddb;
           transform-origin: bottom left;
-          animation: underline 1.2s ease-in-out forwards;
-          animation-delay: 0.2s;
+          animation: underline 0.8s ease-in-out forwards;
         }
       }
 
@@ -108,6 +118,38 @@ const { frontmatter } = Astro.props
           transform: scaleX(1);
         }
       }
+
+      @keyframes fade {
+        0% {
+          opacity: 0;
+          transform: translateX(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
     </style>
-  </body>
+  </body><script>
+    const handleCards = () => {
+      const cardContainer: HTMLElement = document.getElementsByClassName(
+        'card-container'
+      )[0] as HTMLElement
+
+      cardContainer.onmousemove = (e: MouseEvent) => {
+        for (const card of document.querySelectorAll(
+          '.card'
+        ) as NodeListOf<HTMLElement>) {
+          const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top
+
+          card.style.setProperty('--mouse-x', `${x}px`)
+          card.style.setProperty('--mouse-y', `${y}px`)
+        }
+      }
+    }
+
+    document.addEventListener('astro:page-load', handleCards)
+  </script>
 </html>
