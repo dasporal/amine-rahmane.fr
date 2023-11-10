@@ -94,8 +94,9 @@ const { frontmatter } = Astro.props
 
       .title {
         position: relative;
-        color: #f0dddb;
-
+        color: #06000a;
+        background-color: #f0dddb;
+        padding: 0 0.475rem;        
         &::after {
           content: '';
           position: absolute;
@@ -104,7 +105,7 @@ const { frontmatter } = Astro.props
           height: 2px;
           bottom: 0;
           left: 0;
-          background-color: #f0dddb;
+          background-color: #06000a;
           transform-origin: bottom left;
           animation: underline 0.8s ease-in-out forwards;
         }
