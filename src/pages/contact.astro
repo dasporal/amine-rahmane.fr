@@ -1,0 +1,32 @@
+---
+import ContactLayout from '../layouts/ContactLayout.astro'
+---
+
+<ContactLayout>
+
+</ContactLayout>
+
+<style></style>
+
+<script>
+  const handleCards = () => {
+    const cardContainer: HTMLElement = document.getElementsByClassName(
+      'card-container'
+    )[0] as HTMLElement
+
+    cardContainer.onmousemove = (e: MouseEvent) => {
+      for (const card of document.querySelectorAll(
+        '.card'
+      ) as NodeListOf<HTMLElement>) {
+        const rect = card.getBoundingClientRect(),
+          x = e.clientX - rect.left,
+          y = e.clientY - rect.top
+
+        card.style.setProperty('--mouse-x', `${x}px`)
+        card.style.setProperty('--mouse-y', `${y}px`)
+      }
+    }
+  }
+
+  document.addEventListener('astro:page-load', handleCards)
+</script>

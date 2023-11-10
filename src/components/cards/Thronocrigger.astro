@@ -1,5 +1,4 @@
 ---
-import Card from './Card.astro'
 interface Props {
   title: string
   body: string
@@ -10,13 +9,44 @@ interface Props {
 const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
 ---
 
-<Card title={title} body={body} rows={rows} cols={cols}>
-  <div class="row-start-2 row-end-2 col-start-2 col-end-2">
-    <div class="avatar"></div>
+<div
+  id="thronocrigger"
+  class=`card cursor-pointer relative w-full h-56 lg:h-full rounded-xl lg:overflow-hidden
+  before:rounded-[inherit] before:h-full before:content-[''] before:w-full before:absolute before:top-0 before:left-0 before:z-30 
+  before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
+  after:rounded-[inherit] after:h-full after:content-[''] after:w-full after:absolute after:top-0 after:left-0 after:z-10 
+  after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100 group/thronocrigger
+  bg-radial-gradient col-span-[${cols}] row-span-[${rows}]`
+>
+  <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
+  <div
+    class="content relative w-full h-full bg-secondary bg-opacity-30 rounded-[inherit] z-20 m-[1px] bg-cover bg-center
+    px-6 py-4
+    flex flex-row flex-wrap items-center justify-around
+    lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:place-items-center
+    lg:p-6"
+  >
+    <div class="lg:place-self-start">
+      <h2 class="text-text font-title text-4xl font-bold uppercase">{title}</h2>
+      <div class="text-text font-title text-2xl">{body}</div>
+    </div>
+    <div class="lg:row-start-2 lg:row-end-2 lg:col-start-2 lg:col-end-2">
+      <div class="avatar"></div>
+    </div>
   </div>
-</Card>
+</div>
 
 <script>
+  import { navigate } from 'astro:transitions/client'
+
+  const handleClick = () => {
+    document.getElementById('thronocrigger')!.addEventListener('click', (e) => {
+      console.log('click')
+      navigate('/projects/thronocrigger')
+    })
+  }
+
+  document.addEventListener('astro:page-load', handleClick)
 </script>
 
 <style lang="scss">
@@ -70,7 +100,7 @@ const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('../assets/projects/thronocrigger/avatar.png');
+    background-image: url('../../assets/projects/thronocrigger/avatar.png');
 
     &::before,
     &::after {
@@ -90,11 +120,11 @@ const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
     }
     &::before {
       left: -6px;
-      background-image: url('../assets/projects/thronocrigger/avatar-bg-1.png');
+      background-image: url('../../assets/projects/thronocrigger/avatar-bg-1.png');
     }
     &::after {
       left: 6px;
-      background-image: url('../assets/projects/thronocrigger/avatar-bg-2.png');
+      background-image: url('../../assets/projects/thronocrigger/avatar-bg-2.png');
     }
   }
 

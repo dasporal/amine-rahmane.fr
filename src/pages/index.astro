@@ -1,34 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
-import HeroCard from '../components/HeroCard.astro'
-import Thronocrigger from '../components/Thronocrigger.astro'
+import HeroCard from '../components/cards/HeroCard.astro'
+import Thronocrigger from '../components/cards/Thronocrigger.astro'
+import ContactCard from '../components/cards/ContactCard.astro';
 ---
 
 <Layout title="Amine Rahmane - Accueil">
   <main>
     <div
-      class="card-container bg-background w-screen h-screen flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-3 gap-1 py-4 px-2 group/cards"
+      class="card-container bg-background w-screen h-screen flex flex-col gap-3 py-4 px-2 group/cards lg:grid lg:grid-cols-3 lg:grid-rows-3"
     >
       <div class="lg:row-span-2 lg:col-span-2">
         <HeroCard />
       </div>
       <div
-        class="lg:row-span-2 flex flex-col justify-around items-center gap-1"
+        class="flex flex-col justify-around items-center gap-3 h-auto lg:h-full lg:row-span-2"
       >
-        <a href="/projects/thronocrigger" id="thronocrigger">
-          <Thronocrigger title="Thronocrigger" body="Portfolio redesign" rows={1}/>
-        </a>
+        <Thronocrigger title="Thronocrigger" body="Portfolio redesign" />
         <Card
           title="Title"
           body="This is a body of text the is subject to change"
         />
       </div>
       <div
-        class="lg:col-span-3 flex flex-col justify-around items-center gap-1 lg:flex-row"
+        class="flex flex-col justify-around items-center gap-3 w-full h-auto lg:h-full lg:flex-row lg:col-span-3"
       >
         <Card title="test" body=":3" />
-        <Card title="2 columns" body=":3" cols={2} />
+        <Card title="2 columns" body=":3"/>
+        <ContactCard />
       </div>
     </div>
   </main>

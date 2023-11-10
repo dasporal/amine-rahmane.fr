@@ -1,38 +1,42 @@
 ---
-interface Props {
-  title: string
-  body: string
-  cols?: number | string
-  rows?: number | string
-}
 
-const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
 ---
 
 <div
+  id="contact"
   class=`card cursor-pointer relative w-full h-56 lg:h-full rounded-xl lg:overflow-hidden
   before:rounded-[inherit] before:h-full before:content-[''] before:w-full before:absolute before:top-0 before:left-0 before:z-30 
   before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
   after:rounded-[inherit] after:h-full after:content-[''] after:w-full after:absolute after:top-0 after:left-0 after:z-10 
   after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100 group/thronocrigger
-  bg-radial-gradient col-span-[${cols}] row-span-[${rows}]`
+  bg-radial-gradient col-span-auto row-span-auto`
 >
   <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
   <div
     class="content relative w-full h-full bg-secondary bg-opacity-30 rounded-[inherit] z-20 m-[1px] bg-cover bg-center
     px-6 py-4
-    flex flex-row flex-wrap items-center justify-around
-    lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:place-items-center
+    flex flex-row flex-wrap items-center justify-center
     lg:p-6"
   >
-    <div class="lg:place-self-start">
-      <h2 class="text-text font-title text-4xl font-bold uppercase">{title}</h2>
-      <div class="text-text font-title text-2xl">{body}</div>
+    <div
+      class="text font-title prose text-background bg-text px-3 py-2 text-clamp-title w-max tracking-tight"
+    >
+      Contact
     </div>
   </div>
 </div>
 
+<script>
+  import { navigate } from 'astro:transitions/client'
 
+  const handleClick = () => {
+    document.getElementById('contact')!.addEventListener('click', (e) => {
+      navigate('/contact')
+    })
+  }
+
+  document.addEventListener('astro:page-load', handleClick)
+</script>
 
 <style lang="scss">
   .bg-radial-gradient::before {
@@ -52,11 +56,6 @@ const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
   }
 
   .card {
-    background-image: linear-gradient(
-        rgba(12, 27, 29, 0.5),
-        rgba(12, 27, 29, 0.5)
-      ),
-      url('https://fastly.picsum.photos/id/353/400/400.jpg?hmac=mCXcDVleMo5t4wo0PdSoKbTE6ls1-akmVTTfDbOVilA');
     background-size: 100% 100%;
 
     &:hover {
@@ -78,5 +77,26 @@ const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
   .card > .content {
     height: calc(100% - 2px);
     width: calc(100% - 2px);
+  }
+
+  .text {
+    &::before {
+      content: '>';
+      @apply text-background;
+      display: inline-block;
+      animation: blink 2s step-end infinite;
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 </style>
