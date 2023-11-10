@@ -16,10 +16,9 @@ import Thronocrigger from '../components/Thronocrigger.astro'
       <div
         class="lg:row-span-2 flex flex-col justify-around items-center gap-1"
       >
-        <Thronocrigger
-          title="Thronocrigger"
-          body="Portfolio redesign"
-        />
+        <a href="/projects/thronocrigger" id="thronocrigger">
+          <Thronocrigger title="Thronocrigger" body="Portfolio redesign" rows={1}/>
+        </a>
         <Card
           title="Title"
           body="This is a body of text the is subject to change"
@@ -41,7 +40,7 @@ import Thronocrigger from '../components/Thronocrigger.astro'
   const handleCards = () => {
     const cardContainer: HTMLElement = document.getElementsByClassName(
       'card-container'
-    )[0] as HTMLElement;
+    )[0] as HTMLElement
 
     cardContainer.onmousemove = (e: MouseEvent) => {
       for (const card of document.querySelectorAll(

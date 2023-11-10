@@ -1,4 +1,5 @@
 ---
+import Card from './Card.astro'
 interface Props {
   title: string
   body: string
@@ -9,41 +10,13 @@ interface Props {
 const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
 ---
 
-<div
-  id="thronocrigger"
-  class=`card cursor-pointer relative w-full h-full rounded-xl overflow-hidden
-  before:rounded-[inherit] before:h-full before:content-[''] before:w-full before:absolute before:top-0 before:left-0 before:z-30 
-  before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
-  after:rounded-[inherit] after:h-full after:content-[''] after:w-full after:absolute after:top-0 after:left-0 after:z-10 
-  after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100 group/thronocrigger
-  bg-radial-gradient col-span-[${cols}] row-span-[${rows}]`
->
-  <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
-  <div
-    class="content relative p-6 w-full h-full bg-secondary bg-opacity-30 rounded-[inherit] z-20 m-[1px] bg-cover bg-center
-    grid grid-cols-3 grid-rows-3 place-items-center"
-  >
-    <div class="place-self-start">
-      <h2 class="text-text font-title text-4xl font-bold uppercase">{title}</h2>
-      <div class="text-text font-title text-2xl">{body}</div>
-    </div>
-    <div class="row-start-2 row-end-2 col-start-2 col-end-2">
-      <div class="avatar"></div>
-    </div>
+<Card title={title} body={body} rows={rows} cols={cols}>
+  <div class="row-start-2 row-end-2 col-start-2 col-end-2">
+    <div class="avatar"></div>
   </div>
-</div>
+</Card>
 
 <script>
-  import { navigate } from 'astro:transitions/client'
-
-  const handleClick = () => {
-    document.getElementById('thronocrigger')!.addEventListener('click', (e) => {
-      console.log('click')
-      navigate('/projects/thronocrigger')
-    })
-  }
-
-  document.addEventListener('astro:page-load', handleClick)
 </script>
 
 <style lang="scss">

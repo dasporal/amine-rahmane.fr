@@ -14,6 +14,10 @@ export default {
         title: 'Fira Sans, sans-serif',
         body: 'IBM Plex Sans, sans-serif',
       },
+      fontSize: {
+        'clamp-title': "clamp(1.625rem,7vw,3rem)",
+        'clamp-subtitle': "clamp(1rem,2.5vw,2.625rem)",
+      },
       typography: ({ theme }) => ({
         text: {
           css: {
