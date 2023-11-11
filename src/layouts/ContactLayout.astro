@@ -33,16 +33,20 @@ import Card from '../components/Card.astro'
               <div
                 class=`w-full flex flex-col rounded-xl bg-cover bg-center gap-3 p-3 lg:p-8 `
               >
-                <h1 class="title font-title prose text-background bg-text text-clamp-title w-max">
-                  Contact
+                <h1
+                  class="title font-title prose text-background bg-text text-clamp-title w-max"
+                >
+                  Me contacter
                 </h1>
               </div>
-              <div class="prose prose-text min-w-full">
+              <div class="mx-28">
                 <slot />
               </div>
             </div>
           </div>
-          <div class="card-container flex flex-col w-full m-2 gap-4 py-2 lg:w-1/3">
+          <div
+            class="card-container flex flex-col w-full m-2 gap-4 py-2 lg:w-1/3"
+          >
             <Card title="test" body=":3" />
             <Card title="Data" body=":3" />
             <Card title="Data" body=":3" />
@@ -63,7 +67,7 @@ import Card from '../components/Card.astro'
       }
 
       ul {
-        @apply list-disc marker:text-accent font-bold
+        @apply list-disc marker:text-accent font-bold;
       }
 
       main {
@@ -82,7 +86,7 @@ import Card from '../components/Card.astro'
 
       .title {
         position: relative;
-        padding: 0 0.475rem;        
+        padding: 0 0.475rem;
         &::after {
           content: '';
           position: absolute;
@@ -93,7 +97,7 @@ import Card from '../components/Card.astro'
           left: 0;
           background-color: #06000a;
           transform-origin: bottom left;
-          animation: underline 0.8s ease-in-out forwards;
+          animation: underline 1.2s ease-in-out forwards;
         }
       }
 
@@ -117,26 +121,27 @@ import Card from '../components/Card.astro'
         }
       }
     </style>
-  </body><script>
-    const handleCards = () => {
-      const cardContainer: HTMLElement = document.getElementsByClassName(
-        'card-container'
-      )[0] as HTMLElement
+    <script>
+      const handleCards = () => {
+        const cardContainer: HTMLElement = document.getElementsByClassName(
+          'card-container'
+        )[0] as HTMLElement
 
-      cardContainer.onmousemove = (e: MouseEvent) => {
-        for (const card of document.querySelectorAll(
-          '.card'
-        ) as NodeListOf<HTMLElement>) {
-          const rect = card.getBoundingClientRect(),
-            x = e.clientX - rect.left,
-            y = e.clientY - rect.top
+        cardContainer.onmousemove = (e: MouseEvent) => {
+          for (const card of document.querySelectorAll(
+            '.card'
+          ) as NodeListOf<HTMLElement>) {
+            const rect = card.getBoundingClientRect(),
+              x = e.clientX - rect.left,
+              y = e.clientY - rect.top
 
-          card.style.setProperty('--mouse-x', `${x}px`)
-          card.style.setProperty('--mouse-y', `${y}px`)
+            card.style.setProperty('--mouse-x', `${x}px`)
+            card.style.setProperty('--mouse-y', `${y}px`)
+          }
         }
       }
-    }
 
-    document.addEventListener('astro:page-load', handleCards)
-  </script>
+      document.addEventListener('astro:page-load', handleCards)
+    </script>
+  </body>
 </html>

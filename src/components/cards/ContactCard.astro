@@ -11,7 +11,6 @@
   after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100 group/thronocrigger
   bg-radial-gradient col-span-auto row-span-auto`
 >
-  <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
   <div
     class="content relative w-full h-full bg-secondary bg-opacity-30 rounded-[inherit] z-20 m-[1px] bg-cover bg-center
     px-6 py-4
@@ -19,9 +18,9 @@
     lg:p-6"
   >
     <div
-      class="text font-title prose text-background bg-text px-3 py-2 text-clamp-title w-max tracking-tight"
+      class="text font-title prose text-background bg-text px-3 py-2 text-clamp-title w-max tracking-tighter"
     >
-      Contact
+      Me contacter
     </div>
   </div>
 </div>
@@ -80,11 +79,11 @@
   }
 
   .text {
-    &::before {
-      content: '>';
+    &::after {
+      content: '_';
       @apply text-background;
       display: inline-block;
-      animation: blink 2s step-end infinite;
+      animation: blink 1.4s step-end infinite;
     }
   }
 

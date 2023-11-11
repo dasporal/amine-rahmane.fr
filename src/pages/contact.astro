@@ -3,30 +3,64 @@ import ContactLayout from '../layouts/ContactLayout.astro'
 ---
 
 <ContactLayout>
-
+  <div class="flex flex-col gap-6">
+    <div class="prose prose-text">
+      <p>
+        Une idée, un projet ? Contactez moi en remplissant le formulaire
+        ci-dessous ou bien envoyez moi un mail à <a
+          href="mailto:contact@amine-rahmane.fr">contact@amine-rahmane.fr</a
+        > et je vous répondrai dans les plus brefs délais.
+      </p>
+    </div>
+    <div class="flex flex-col lg:w-2/3 lg:ml-6 lg:gap-4">
+      <div class="flex flex-col gap-5 w-full lg:flex-row">
+        <div class="flex flex-col w-1/2 lg:w-auto">
+          <span class="w-full uppercase text-sm text-text font-bold"
+            >Prénom</span
+          >
+          <input
+            class="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
+            type="text"
+            placeholder=""
+          />
+        </div>
+        <div class="flex flex-col w-1/2 lg:w-auto">
+          <span class="w-full uppercase text-sm text-text font-bold">Nom</span>
+          <input
+            class="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
+            type="text"
+            placeholder=""
+          />
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-5">
+        <div class="flex flex-col w-full">
+          <span class="uppercase text-sm text-text font-bold">Email</span>
+          <input
+            class="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col gap-5">
+        <div class="flex flex-col w-full">
+          <span class="uppercase text-sm text-text font-bold">Message</span>
+          <textarea
+            class="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
+            rows="10"></textarea>
+        </div>
+      </div>
+      <div class="mt-8 w-full">
+        <button
+          class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
+        >
+          Send Message
+        </button>
+      </div>
+    </div>
+  </div>
 </ContactLayout>
 
 <style></style>
 
-<script>
-  const handleCards = () => {
-    const cardContainer: HTMLElement = document.getElementsByClassName(
-      'card-container'
-    )[0] as HTMLElement
-
-    cardContainer.onmousemove = (e: MouseEvent) => {
-      for (const card of document.querySelectorAll(
-        '.card'
-      ) as NodeListOf<HTMLElement>) {
-        const rect = card.getBoundingClientRect(),
-          x = e.clientX - rect.left,
-          y = e.clientY - rect.top
-
-        card.style.setProperty('--mouse-x', `${x}px`)
-        card.style.setProperty('--mouse-y', `${y}px`)
-      }
-    }
-  }
-
-  document.addEventListener('astro:page-load', handleCards)
-</script>
+<script></script>
