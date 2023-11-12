@@ -3,7 +3,10 @@ import mdx from '@astrojs/mdx';
 import tailwind from "@astrojs/tailwind";
 import NetlifyCMS from 'astro-netlify-cms';
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx()]
+  integrations: [tailwind(), mdx(), react()],
+  renderers: ['@astrojs/react']
 });
