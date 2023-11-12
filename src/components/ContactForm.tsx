@@ -44,6 +44,7 @@ export const ContactForm = () => {
               type="text"
               placeholder=""
               name="firstname"
+              required
             />
           </div>
           <div className="flex flex-col w-1/2  flex-grow lg:w-auto">
@@ -55,6 +56,7 @@ export const ContactForm = () => {
               type="text"
               placeholder=""
               name="surname"
+              required
             />
           </div>
         </div>
@@ -63,8 +65,9 @@ export const ContactForm = () => {
             <span className="uppercase text-sm text-text font-bold">Email</span>
             <input
               className="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
-              type="text"
+              type="email"
               name="email"
+              required
             />
           </div>
         </div>
@@ -75,8 +78,9 @@ export const ContactForm = () => {
             </span>
             <textarea
               className="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
-              rows="10"
+              rows={10}
               name="message"
+              required
             ></textarea>
           </div>
         </div>
