@@ -4,7 +4,7 @@ import ContactLayout from '../layouts/ContactLayout.astro'
 
 <ContactLayout>
   <div class="flex flex-col gap-6">
-    <div class="prose prose-text">
+    <div class="prose prose-text w-full">
       <p>
         Une idée, un projet ? Contactez moi en remplissant le formulaire
         ci-dessous ou bien envoyez moi un mail à <a
@@ -12,9 +12,9 @@ import ContactLayout from '../layouts/ContactLayout.astro'
         > et je vous répondrai dans les plus brefs délais.
       </p>
     </div>
-    <div class="flex flex-col lg:w-2/3 lg:ml-6 lg:gap-4">
-      <div class="flex flex-col gap-5 w-full lg:flex-row">
-        <div class="flex flex-col w-1/2 lg:w-auto">
+    <div class="flex flex-col w-full lg:w-2/3 lg:ml-6 gap-4">
+      <div class="flex flex-col w-full gap-4 lg:flex-row lg:gap-5">
+        <div class="flex flex-col w-1/2 flex-grow lg:w-auto">
           <span class="w-full uppercase text-sm text-text font-bold"
             >Prénom</span
           >
@@ -24,7 +24,7 @@ import ContactLayout from '../layouts/ContactLayout.astro'
             placeholder=""
           />
         </div>
-        <div class="flex flex-col w-1/2 lg:w-auto">
+        <div class="flex flex-col w-1/2  flex-grow lg:w-auto">
           <span class="w-full uppercase text-sm text-text font-bold">Nom</span>
           <input
             class="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
@@ -50,11 +50,11 @@ import ContactLayout from '../layouts/ContactLayout.astro'
             rows="10"></textarea>
         </div>
       </div>
-      <div class="mt-8 w-full">
+      <div class="w-1/4 self-end">
         <button
-          class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
+          class="uppercase text-sm font-bold tracking-wide bg-accent text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
         >
-          Send Message
+          Envoyer
         </button>
       </div>
     </div>
