@@ -17,7 +17,7 @@ export const ContactForm = () => {
         form.reset()
         toast.success('Message envoyé.')
       })
-      .catch((error) => alert(error))
+      .catch((error) => toast.error(error))
   }
 
   return (
