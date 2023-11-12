@@ -4,9 +4,18 @@ interface Props {
   body: string
   cols?: number | string
   rows?: number | string
+  image?: string
+  link?: string
 }
 
-const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
+const {
+  title,
+  body,
+  cols = 'auto',
+  rows = 'auto',
+  image = 'https://fastly.picsum.photos/id/74/200/200.jpg?hmac=vocZAjFd_aCjJJ-cIS28YxzM2nwLpe_EYBYW95lrzUI',
+  link = '#',
+} = Astro.props
 ---
 
 <div
@@ -18,21 +27,28 @@ const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
   bg-radial-gradient col-span-[${cols}] row-span-[${rows}]`
 >
   <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
-  <div
-    class="content relative w-full h-full bg-secondary bg-opacity-30 rounded-[inherit] z-20 m-[1px] bg-cover bg-center
+  <a href={link}>
+    <div
+      class="content relative w-full h-full bg-secondary bg-opacity-30 rounded-[inherit] z-40 m-[1px] bg-cover bg-center
     px-6 py-4
     flex flex-row flex-wrap items-center justify-around
     lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:place-items-center
     lg:p-6"
-  >
-    <div class="lg:place-self-start">
-      <h2 class="text-text font-title text-4xl font-bold uppercase">{title}</h2>
-      <div class="text-text font-title text-2xl">{body}</div>
+    >
+      <div class="lg:place-self-start">
+        <h2 class="text-text font-title text-4xl font-bold uppercase">
+          {title}
+        </h2>
+        <div class="text-text font-title text-2xl">{body}</div>
+      </div>
+      <div class="lg:row-start-2 lg:row-end-2 lg:col-start-2 lg:col-end-2">
+        <img src={image} alt=`Image de ${title}` class="h-60" />
+      </div>
     </div>
-  </div>
+  </a>
 </div>
 
-
+<script></script>
 
 <style lang="scss">
   .bg-radial-gradient::before {
@@ -52,13 +68,6 @@ const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
   }
 
   .card {
-    background-image: linear-gradient(
-        rgba(12, 27, 29, 0.5),
-        rgba(12, 27, 29, 0.5)
-      ),
-      url('https://fastly.picsum.photos/id/353/400/400.jpg?hmac=mCXcDVleMo5t4wo0PdSoKbTE6ls1-akmVTTfDbOVilA');
-    background-size: 100% 100%;
-
     &:hover {
       z-index: 100;
       .content {

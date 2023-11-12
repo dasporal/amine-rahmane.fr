@@ -4,7 +4,9 @@ import '@fontsource/ibm-plex-sans'
 import { ViewTransitions } from 'astro:transitions'
 import Header from '../components/Header.astro'
 import Card from '../components/Card.astro'
-import { Image } from 'astro:assets'
+import rocbaron from '../assets/projects/rocbaron/logo.png'
+import Thronocrigger from '../components/cards/Thronocrigger.astro'
+import ContactCard from '../components/cards/ContactCard.astro'
 
 interface Props {
   frontmatter: {
@@ -39,13 +41,13 @@ const { frontmatter } = Astro.props
         <div class="flex flex-col lg:flex-row w-full h-full gap-8">
           <div class="w-full lg:w-2/3">
             <div
-              class="body-content bg-background shadow shadow-primary opacity-100 w-full h-full flex flex-col rounded-xl bg-cover bg-center p-8 gap-3"
+              class="body-content bg-background shadow shadow-primary opacity-100 w-full h-full flex flex-col flex-wrap rounded-xl bg-cover bg-center p-8 gap-3"
             >
               <div
-                class=`w-full flex flex-col rounded-xl bg-cover bg-center gap-3 p-3 lg:p-8 `
+                class='w-full flex flex-col rounded-xl bg-cover bg-center gap-3 p-3 lg:p-8'
               >
                 <h1
-                  class="title font-title prose text-background bg-text text-clamp-title tracking-tighter w-max"
+                  class="title font-title prose text-background bg-text text-clamp-title tracking-tighter"
                 >
                   {frontmatter.title}
                 </h1>
@@ -55,7 +57,7 @@ const { frontmatter } = Astro.props
                   {frontmatter.company}
                 </h2>
               </div>
-              <div class="mx-28">
+              <div class="lg:mx-28">
                 <div class="prose prose-text min-w-full">
                   <slot />
                 </div>
@@ -65,11 +67,14 @@ const { frontmatter } = Astro.props
           <div
             class="card-container flex flex-col w-full m-2 gap-4 py-2 lg:w-1/3"
           >
-            <Card title="test" body=":3" />
-            <Card title="Data" body=":3" />
-            <Card title="Data" body=":3" />
-            <Card title="Data" body=":3" />
-            <Card title="Data" body=":3" />
+          <Thronocrigger title="Thronocrigger" body="Portfolio redesign" />
+          <Card
+            title="Mairie de Rocbaron"
+            body="Redesign du site de la mairie de Rocbaron"
+            image={rocbaron.src}
+            link="/projects/mairie-rocbaron"
+          />
+          <ContactCard />
           </div>
         </div>
       </div>

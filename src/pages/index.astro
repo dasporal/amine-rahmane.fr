@@ -3,7 +3,10 @@ import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import HeroCard from '../components/cards/HeroCard.astro'
 import Thronocrigger from '../components/cards/Thronocrigger.astro'
-import ContactCard from '../components/cards/ContactCard.astro';
+import ContactCard from '../components/cards/ContactCard.astro'
+
+import rocbaron from '../assets/projects/rocbaron/logo.png'
+import efrei from '../assets/projects/efrei/logo.jpg'
 ---
 
 <Layout title="Amine Rahmane - Accueil">
@@ -19,15 +22,22 @@ import ContactCard from '../components/cards/ContactCard.astro';
       >
         <Thronocrigger title="Thronocrigger" body="Portfolio redesign" />
         <Card
-          title="Title"
-          body="This is a body of text the is subject to change"
+          title="Mairie de Rocbaron"
+          body="Redesign et mise en place d'une gestion de contenu"
+          image={rocbaron.src}
+          link="/projects/mairie-rocbaron"
         />
       </div>
       <div
         class="flex flex-col justify-around items-center gap-3 w-full h-auto lg:h-full lg:flex-row lg:col-span-3"
       >
-        <Card title="test" body=":3" />
-        <Card title="2 columns" body=":3"/>
+        <Card
+          title="Efrei"
+          body="Développement d'application interne"
+          image={efrei.src}
+          link="/projects/efrei"
+        />
+        <Card title="2 columns" body=":3" />
         <ContactCard />
       </div>
     </div>
@@ -37,6 +47,7 @@ import ContactCard from '../components/cards/ContactCard.astro';
 <style></style>
 
 <script>
+  import { navigate } from 'astro:transitions/client'
   const handleCards = () => {
     const cardContainer: HTMLElement = document.getElementsByClassName(
       'card-container'
