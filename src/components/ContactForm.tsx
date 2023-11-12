@@ -2,18 +2,21 @@ import React from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 
 export const ContactForm = () => {
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const myForm = event.target
-    const formData = new FormData(myForm)
+    const form: any = event.target 
+    const formData: any = new FormData(form)
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => toast.success('Message envoyé.'))
+      .then(() => {
+        form.reset()
+        toast.success('Message envoyé.')
+      })
       .catch((error) => alert(error))
   }
 
