@@ -1,7 +1,7 @@
 ---
 interface Props {
   title: string
-  body: string
+  project: string
   cols?: number | string
   rows?: number | string
   image?: string
@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title,
-  body,
+  project,
   cols = 'auto',
   rows = 'auto',
   image = 'https://fastly.picsum.photos/id/74/200/200.jpg?hmac=vocZAjFd_aCjJJ-cIS28YxzM2nwLpe_EYBYW95lrzUI',
@@ -23,7 +23,7 @@ const {
   before:rounded-[inherit] before:h-full before:content-[''] before:w-full before:absolute before:top-0 before:left-0 before:z-30 
   before:opacity-0 before:transition-opacity before:duration-500 group-hover/cards:hover:before:opacity-100
   after:rounded-[inherit] after:h-full after:content-[''] after:w-full after:absolute after:top-0 after:left-0 after:z-10 
-  after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100 group/thronocrigger
+  after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100 group
   bg-radial-gradient col-span-[${cols}] row-span-[${rows}]`
 >
   <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
@@ -39,7 +39,7 @@ const {
         <h2 class="text-text font-title text-4xl font-bold uppercase">
           {title}
         </h2>
-        <div class="text-text font-title text-2xl">{body}</div>
+        <div class="text-text font-title text-2xl">{project}</div>
       </div>
       <div class="lg:row-start-2 lg:row-end-2 lg:col-start-2 lg:col-end-2">
         <img src={image} alt=`Image de ${title}` class="h-60" />
@@ -68,6 +68,14 @@ const {
   }
 
   .card {
+    .content {
+      height: calc(100% - 2px);
+      width: calc(100% - 2px);
+      .overlay {
+        visibility: hidden;
+        background-color: rgba(159, 43, 30, 0);
+      }
+    }
     &:hover {
       z-index: 100;
       .content {
@@ -82,10 +90,5 @@ const {
     background: radial-gradient(rgba(255, 255, 255, 0.05) 9%, transparent 9%);
     background-position: 0% 0%;
     background-size: 8vmin 8vmin;
-  }
-
-  .card > .content {
-    height: calc(100% - 2px);
-    width: calc(100% - 2px);
   }
 </style>

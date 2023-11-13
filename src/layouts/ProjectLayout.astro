@@ -10,7 +10,7 @@ import ContactCard from '../components/cards/ContactCard.astro'
 
 interface Props {
   frontmatter: {
-    title: string
+    project: string
     company: string
     image: string
   }
@@ -49,7 +49,7 @@ const { frontmatter } = Astro.props
                 <h1
                   class="title font-title prose text-background bg-text text-clamp-title tracking-tighter"
                 >
-                  {frontmatter.title}
+                  {frontmatter.project}
                 </h1>
                 <h2
                   class="font-title prose prose-text tracking-tight text-clamp-title"
@@ -70,7 +70,7 @@ const { frontmatter } = Astro.props
           <Thronocrigger title="Thronocrigger" body="Portfolio redesign" />
           <Card
             title="Mairie de Rocbaron"
-            body="Redesign du site de la mairie de Rocbaron"
+            project="Redesign du site de la mairie de Rocbaron"
             image={rocbaron.src}
             link="/projects/mairie-rocbaron"
           />
