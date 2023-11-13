@@ -3,28 +3,30 @@
 ---
 
 <div
-  class=`card relative bg-background w-full h-full rounded-xl bg-cover bg-center w-full h-full
+  class=`card group relative bg-background w-full h-full rounded-xl bg-cover bg-center w-full h-full
   before:rounded-[inherit] before:h-full before:content-[''] before:w-full before:absolute before:top-0 before:left-0 before:z-30 
   before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
   after:rounded-[inherit] after:h-full after:content-[''] after:w-full after:absolute after:top-0 after:left-0 after:z-10 
-  after:opacity-0 after:transition-opacity after:duration-500 group-hover:after:opacity-100
+  after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100
   bg-radial-gradient`
 >
   <div
     class="content p-6 bg-secondary bg-opacity-30 background-image rounded-[inherit] z-20 m-[1px] relative"
   >
-    <div class="flex flex-col justify-end items-end font-title text-text">
+    <div class="flex flex-col justify-end items-end font-title text-text gap-3">
       <span class="text-5xl tracking-tighter">Amine Debbache</span>
-      <span class="text-3xl tracking-tight">Développeur et créateur d'identité</span>
+      <span class="text-3xl tracking-tight"
+        >Développeur et créateur d'identité</span
+      >
     </div>
   </div>
 </div>
 
-<style>
+<style lang="scss">
   .bg-radial-gradient::before {
     background: radial-gradient(
       400px circle at var(--mouse-x) var(--mouse-y),
-      rgba(71, 112, 174, 0.2),
+      rgba(71, 112, 174, 0.3),
       transparent 40%
     );
   }
@@ -32,9 +34,16 @@
   .bg-radial-gradient::after {
     background: radial-gradient(
       200px circle at var(--mouse-x) var(--mouse-y),
-      rgba(71, 112, 174, 0.1),
+      rgba(71, 112, 174, 0.2),
       transparent 40%
     );
+  }
+  .card:hover {
+    .background-image {
+      transition: opacity 0.3s ease-in-out;
+      background-image: linear-gradient(rgba(6, 0, 10, 0.8), rgba(6, 0, 10, 0.8)),
+        url('../../assets/background-amine.jpg');
+    }
   }
 
   .card > .content {
