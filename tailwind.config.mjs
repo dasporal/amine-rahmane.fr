@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'text': '#f0dddb',
-        'background': '#06000a',
-        'primary': '#9f2b1e',
-        'secondary': '#0c1b1d',
-        'accent': '#4770ae',
-      },
+        'text': 'rgb(254, 252, 251)',
+        'background': 'rgb(8, 3, 2)',
+        'primary': 'rgb(176, 222, 232)',
+        'secondary': 'rgb(9, 16, 32)',
+        'accent': 'rgb(228, 100, 71)',
+       },            
       fontFamily: {
         title: 'Fira Sans, sans-serif',
         body: 'IBM Plex Sans, sans-serif',

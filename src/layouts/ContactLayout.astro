@@ -4,7 +4,7 @@ import '@fontsource/ibm-plex-sans'
 import { ViewTransitions } from 'astro:transitions'
 import Header from '../components/Header.astro'
 import Card from '../components/Card.astro'
-import { Toaster } from 'react-hot-toast'
+import rocbaron from '../assets/projects/rocbaron/logo.png'
 ---
 
 <!doctype html>
@@ -48,11 +48,11 @@ import { Toaster } from 'react-hot-toast'
           <div
             class="card-container flex flex-col w-full m-2 gap-4 py-2 lg:w-1/3"
           >
-            <Card title="test" project=":3" />
-            <Card title="Data" project=":3" />
-            <Card title="Data" project=":3" />
-            <Card title="Data" project=":3" />
-            <Card title="Data" project=":3" />
+            <Card title="test" project=":3" image={rocbaron} />
+            <Card title="Data" project=":3" image={rocbaron} />
+            <Card title="Data" project=":3" image={rocbaron} />
+            <Card title="Data" project=":3" image={rocbaron} />
+            <Card title="Data" project=":3" image={rocbaron} />
           </div>
         </div>
       </div>

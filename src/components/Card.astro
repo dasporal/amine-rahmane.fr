@@ -1,10 +1,11 @@
 ---
+import { Image } from 'astro:assets'
 interface Props {
   title: string
   project: string
   cols?: number | string
   rows?: number | string
-  image?: string
+  image?: any
   link?: string
 }
 
@@ -13,9 +14,10 @@ const {
   project,
   cols = 'auto',
   rows = 'auto',
-  image = 'https://fastly.picsum.photos/id/74/200/200.jpg?hmac=vocZAjFd_aCjJJ-cIS28YxzM2nwLpe_EYBYW95lrzUI',
+  image,
   link = '#',
 } = Astro.props
+console.log(image)
 ---
 
 <div
@@ -42,7 +44,7 @@ const {
         <div class="text-text font-title text-2xl">{project}</div>
       </div>
       <div class="lg:row-start-2 lg:row-end-2 lg:col-start-2 lg:col-end-2">
-        <img src={image} alt=`Image de ${title}` class="h-60" />
+        <Image src={image} alt=`Image de ${title}` />
       </div>
     </div>
   </a>
@@ -54,7 +56,7 @@ const {
   .bg-radial-gradient::before {
     background: radial-gradient(
       400px circle at var(--mouse-x) var(--mouse-y),
-      rgba(71, 112, 174, 0.5),
+      rgba(228, 100, 71, 0.5),
       transparent 40%
     );
   }
@@ -62,7 +64,7 @@ const {
   .bg-radial-gradient::after {
     background: radial-gradient(
       200px circle at var(--mouse-x) var(--mouse-y),
-      rgba(71, 112, 174, 0.3),
+      rgba(228, 100, 71, 0.3),
       transparent 40%
     );
   }
@@ -71,10 +73,6 @@ const {
     .content {
       height: calc(100% - 2px);
       width: calc(100% - 2px);
-      .overlay {
-        visibility: hidden;
-        background-color: rgba(159, 43, 30, 0);
-      }
     }
     &:hover {
       z-index: 100;
