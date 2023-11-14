@@ -17,22 +17,8 @@ const { title, project, link } = Astro.props
     <div class="avatar"></div>
   </Card>
 </div>
-<style lang="scss">
-  .card:hover {
-    z-index: 100;
-    .content {
-      transform: scale(1.02);
-      transition: transform 0.2s ease-in-out;
-    }
-    .avatar {
-      &::before,
-      &::after {
-        animation: glitch-effect (random(5) + s) infinite linear
-          alternate-reverse;
-      }
-    }
-  }
 
+<style lang="scss">
   .avatar {
     position: relative;
     width: clamp(180px, 4vw, 400px);

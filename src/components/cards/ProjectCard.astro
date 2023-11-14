@@ -10,14 +10,11 @@ interface Props {
   link?: string
 }
 
-const {
-  title,
-  project,
-  image,
-  link,
-} = Astro.props
+const { title, project, image, link } = Astro.props
 ---
 
-<Card title={title} project={project} link={link}>
-  <Image src={image} alt=`Image de ${title}` />
-</Card>
+<div class="card h-1/2">
+  <Card title={title} project={project} link={link}>
+    <Image src={image} alt=`Image de ${title}` />
+  </Card>
+</div>
