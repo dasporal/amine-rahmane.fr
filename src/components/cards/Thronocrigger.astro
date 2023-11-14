@@ -1,68 +1,23 @@
 ---
+import { Image } from 'astro:assets'
+import Card from '../Card.astro'
 interface Props {
   title: string
-  body: string
+  project: string
   cols?: number | string
   rows?: number | string
+  link?: string
 }
 
-const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
+const { title, project, link } = Astro.props
 ---
 
-<div
-  class=`card cursor-pointer relative w-full h-56 lg:h-full rounded-xl lg:overflow-hidden
-  before:rounded-[inherit] before:h-full before:content-[''] before:w-full before:absolute before:top-0 before:left-0 before:z-30 
-  before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
-  after:rounded-[inherit] after:h-full after:content-[''] after:w-full after:absolute after:top-0 after:left-0 after:z-10 
-  after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100 group/thronocrigger
-  bg-radial-gradient col-span-[${cols}] row-span-[${rows}]`
->
-  <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
-  <a href="/projects/thronocrigger">
-    <div
-      class="content relative w-full h-full bg-secondary bg-opacity-30 rounded-[inherit] z-40 m-[1px] bg-cover bg-center
-    px-6 py-4
-    flex flex-row flex-wrap items-center justify-around
-    lg:grid lg:grid-cols-3 lg:grid-rows-3 lg:place-items-center
-    lg:p-6"
-    >
-      <div class="lg:place-self-start">
-        <h2 class="text-text font-title text-4xl font-bold uppercase">
-          {title}
-        </h2>
-        <div class="text-text font-title text-2xl">{body}</div>
-      </div>
-      <div class="lg:row-start-2 lg:row-end-2 lg:col-start-2 lg:col-end-2">
-        <div class="avatar"></div>
-      </div>
-    </div>
-  </a>
+<div class="card h-1/2">
+  <Card title={title} project={project} link={link}>
+    <div class="avatar"></div>
+  </Card>
 </div>
-
 <style lang="scss">
-  .bg-radial-gradient::before {
-    background: radial-gradient(
-      400px circle at var(--mouse-x) var(--mouse-y),
-      rgba(228, 100, 71, 0.5),
-      transparent 40%
-    );
-  }
-
-  .bg-radial-gradient::after {
-    background: radial-gradient(
-      200px circle at var(--mouse-x) var(--mouse-y),
-      rgba(228, 100, 71, 0.3),
-      transparent 40%
-    );
-  }
-
-  .dotted-grid {
-    z-index: 1;
-    background: radial-gradient(rgba(255, 255, 255, 0.05) 9%, transparent 9%);
-    background-position: 0% 0%;
-    background-size: 8vmin 8vmin;
-  }
-
   .card:hover {
     z-index: 100;
     .content {
@@ -76,11 +31,6 @@ const { title, body, cols = 'auto', rows = 'auto' } = Astro.props
           alternate-reverse;
       }
     }
-  }
-
-  .card > .content {
-    height: calc(100% - 2px);
-    width: calc(100% - 2px);
   }
 
   .avatar {

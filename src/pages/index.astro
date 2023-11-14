@@ -7,6 +7,7 @@ import ContactCard from '../components/cards/ContactCard.astro'
 
 import rocbaron from '../assets/projects/rocbaron/logo.png'
 import efrei from '../assets/projects/efrei/logo.jpg'
+import ProjectCard from '../components/cards/ProjectCard.astro'
 ---
 
 <Layout title="Amine Rahmane - Accueil">
@@ -20,8 +21,8 @@ import efrei from '../assets/projects/efrei/logo.jpg'
       <div
         class="flex flex-col justify-around items-center gap-3 h-auto lg:h-full lg:row-span-2"
       >
-        <Thronocrigger title="Thronocrigger" body="Portfolio redesign" />
-        <Card
+        <Thronocrigger title="Thronocrigger" project="Portfolio redesign" link='/projects/thronocrigger' />
+        <ProjectCard
           title="Mairie de Rocbaron"
           project="Redesign et mise en place d'une gestion de contenu"
           image={rocbaron}
@@ -31,13 +32,13 @@ import efrei from '../assets/projects/efrei/logo.jpg'
       <div
         class="flex flex-col justify-around items-center gap-3 w-full h-auto lg:h-full lg:flex-row lg:col-span-3"
       >
-        <Card
+        <ProjectCard
           title="Efrei"
           project="Développement d'application interne"
           image={efrei}
           link="/projects/efrei"
         />
-        <Card title="2 columns" project=":3" image={rocbaron} />
+        <ProjectCard title="2 columns" project=":3" image={rocbaron} />
         <ContactCard />
       </div>
     </div>
