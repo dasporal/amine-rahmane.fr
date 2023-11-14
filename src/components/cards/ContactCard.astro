@@ -29,7 +29,7 @@
   import { navigate } from 'astro:transitions/client'
 
   const handleClick = () => {
-    document.getElementById('contact')!.addEventListener('click', (e) => {
+    document.getElementById('contact')!.addEventListener('click', () => {
       navigate('/contact')
     })
   }
