@@ -21,7 +21,11 @@ import ProjectCard from '../components/cards/ProjectCard.astro'
       <div
         class="flex flex-col justify-around items-center gap-3 h-auto lg:h-full lg:row-span-2"
       >
-        <Thronocrigger title="Thronocrigger" project="Portfolio redesign" link='/projects/thronocrigger' />
+        <Thronocrigger
+          title="Thronocrigger"
+          project="Portfolio redesign"
+          link="/projects/thronocrigger"
+        />
         <ProjectCard
           title="Mairie de Rocbaron"
           project="Redesign et mise en place d'une gestion de contenu"
@@ -30,7 +34,7 @@ import ProjectCard from '../components/cards/ProjectCard.astro'
         />
       </div>
       <div
-        class="flex flex-col justify-around items-center gap-3 w-full h-auto lg:h-full lg:flex-row lg:col-span-3"
+        class="flex flex-col justify-around items-center gap-3 w-full h-auto lg:h-full lg:flex-row lg:col-span-2"
       >
         <ProjectCard
           title="Efrei"
@@ -38,7 +42,16 @@ import ProjectCard from '../components/cards/ProjectCard.astro'
           image={efrei}
           link="/projects/efrei"
         />
-        <ProjectCard title="2 columns" project=":3" image={rocbaron} />
+        <ProjectCard
+          title="Efrei"
+          project="Développement d'application interne"
+          image={rocbaron}
+          link="/projects/efrei"
+        />
+      </div>
+      <div
+        class="flex flex-col justify-around items-center gap-3 w-full h-auto lg:h-full lg:flex-row lg:col-span-1"
+      >
         <ContactCard />
       </div>
     </div>

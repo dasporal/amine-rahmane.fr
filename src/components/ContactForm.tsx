@@ -33,14 +33,14 @@ export const ContactForm = () => {
           Don’t fill this out if you’re human: <input name="bot-field" />
         </label>
       </p>
-      <div className="flex flex-col w-full lg:w-2/3 lg:ml-6 gap-4">
+      <div className="flex flex-col w-full lg:ml-6 gap-4">
         <div className="flex flex-col w-full gap-4 lg:flex-row lg:gap-5">
           <div className="flex flex-col w-1/2 flex-grow lg:w-auto">
             <span className="w-full uppercase text-sm text-text font-bold">
               Prénom
             </span>
             <input
-              className="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
+              className="w-full mt-2 p-3 rounded-lg prose max-w-none focus:outline-none focus:outline-accent"
               type="text"
               placeholder=""
               name="firstname"
@@ -52,7 +52,7 @@ export const ContactForm = () => {
               Nom
             </span>
             <input
-              className="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
+              className="w-full mt-2 p-3 rounded-lg prose max-w-none focus:outline-none focus:outline-accent"
               type="text"
               placeholder=""
               name="surname"
@@ -64,7 +64,7 @@ export const ContactForm = () => {
           <div className="flex flex-col w-full">
             <span className="uppercase text-sm text-text font-bold">Email</span>
             <input
-              className="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
+              className="w-full mt-2 p-3 rounded-lg prose max-w-none focus:outline-none focus:outline-accent"
               type="email"
               name="email"
               required
@@ -77,7 +77,7 @@ export const ContactForm = () => {
               Message
             </span>
             <textarea
-              className="w-full mt-2 p-3 rounded-lg prose focus:outline-none focus:outline-accent"
+              className="w-full mt-2 p-3 rounded-lg prose max-w-none focus:outline-none focus:outline-accent"
               rows={10}
               name="message"
               required
