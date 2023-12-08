@@ -11,9 +11,9 @@ import ProjectCard from '../components/cards/ProjectCard.astro'
 ---
 
 <Layout title="Amine Rahmane - Accueil">
-  <main>
+  <main class="bg-background">
     <div
-      class="card-container bg-background w-screen h-screen flex flex-col gap-3 py-4 px-2 group/cards lg:grid lg:grid-cols-3 lg:grid-rows-3"
+      class="card-container w-screen h-screen flex flex-col gap-3 py-4 px-2 group/cards lg:grid lg:grid-cols-3 lg:grid-rows-3"
     >
       <div class="lg:row-span-2 lg:col-span-2">
         <HeroCard />
@@ -52,7 +52,9 @@ import ProjectCard from '../components/cards/ProjectCard.astro'
       <div
         class="flex flex-col justify-around items-center gap-3 w-full h-auto lg:h-full lg:flex-row lg:col-span-1"
       >
-        <ContactCard />
+        <div class="card h-full w-full overflow-hidden">
+          <ContactCard />
+        </div>
       </div>
     </div>
   </main>

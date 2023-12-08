@@ -13,7 +13,7 @@ interface Props {
 const { title, project, image, link } = Astro.props
 ---
 
-<div class="card h-full overflow-hidden">
+<div class="card h-full w-full overflow-hidden">
   <Card title={title} project={project} link={link}>
     <Image src={image} alt=`Image de ${title}` />
   </Card>
