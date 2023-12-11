@@ -3,10 +3,13 @@ import '@fontsource/fira-sans'
 import '@fontsource/ibm-plex-sans'
 import { ViewTransitions } from 'astro:transitions'
 import Header from '../components/Header.astro'
-import Card from '../components/Card.astro'
-import rocbaron from '../assets/projects/rocbaron/logo.png'
 import Thronocrigger from '../components/cards/Thronocrigger.astro'
 import ContactCard from '../components/cards/ContactCard.astro'
+import ProjectCard from '../components/cards/ProjectCard.astro'
+
+import samuelhebting from '../assets/projects/samuel-hebting/logo.png'
+import amsecurite from '../assets/projects/am-securite/logo.png'
+import petitponey from '../assets/projects/petit-poney/logo.png'
 
 interface Props {
   frontmatter: {
@@ -30,21 +33,21 @@ const { frontmatter } = Astro.props
     <title>Amine Rahmane - {frontmatter.company}</title>
     <ViewTransitions />
   </head>
-  <body class="bg-background h-screen w-screen">
+  <body class="bg-background w-screen">
     <main class="flex justify-center items-center z-20 lg:pb-8">
       <div
-        class="flex flex-col justify-center items-center h-full w-full gap-4 lg:w-2/3"
+        class="flex flex-col justify-center items-center h-auto w-full gap-4 lg:w-2/3"
       >
         <div class="w-full p-3">
           <Header />
         </div>
-        <div class="flex flex-col lg:flex-row w-full h-full gap-8">
+        <div class="flex flex-col lg:flex-row w-full h-auto gap-8">
           <div class="w-full lg:w-2/3">
             <div
-              class="body-content bg-background shadow shadow-primary opacity-100 w-full h-full flex flex-col flex-wrap rounded-xl bg-cover bg-center p-8 gap-3"
+              class="body-content bg-background shadow shadow-primary opacity-100 w-full h-auto flex flex-col flex-wrap rounded-xl bg-cover bg-center px-8 pb-16 gap-3"
             >
               <div
-                class='w-full flex flex-col rounded-xl bg-cover bg-center gap-3 p-3 lg:p-8'
+                class="w-full flex flex-col rounded-xl bg-cover bg-center gap-3 p-3 lg:p-8"
               >
                 <h1
                   class="title font-title prose text-background bg-text text-clamp-title tracking-tighter"
@@ -67,14 +70,30 @@ const { frontmatter } = Astro.props
           <div
             class="card-container flex flex-col w-full m-2 gap-4 py-2 lg:w-1/3"
           >
-          <Thronocrigger title="Thronocrigger" project="Portfolio redesign" />
-          <Card
-            title="Mairie de Rocbaron"
-            project="Redesign du site de la mairie de Rocbaron"
-            image={rocbaron}
-            link="/projects/mairie-rocbaron"
-          />
-          <ContactCard />
+            <Thronocrigger
+              title="Thronocrigger"
+              project="Portfolio redesign"
+              link="/projects/thronocrigger"
+            />
+            <ProjectCard
+              title="Petit Poney Bar"
+              project="Design et déploiement"
+              image={petitponey}
+              link="/projects/petit-poney-bar"
+            />
+            <ProjectCard
+              title="AM Sécurité"
+              project="Design et déploiement"
+              image={amsecurite}
+              link="/projects/am-securite"
+            />
+            <ContactCard />
+            <ProjectCard
+              title="Samuel Hebting"
+              project="Design et déploiement de portfolio"
+              image={samuelhebting}
+              link="/projects/samuel-hebting"
+            />
           </div>
         </div>
       </div>

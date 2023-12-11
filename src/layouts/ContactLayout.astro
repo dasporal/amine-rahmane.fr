@@ -3,8 +3,12 @@ import '@fontsource/fira-sans'
 import '@fontsource/ibm-plex-sans'
 import { ViewTransitions } from 'astro:transitions'
 import Header from '../components/Header.astro'
-import Card from '../components/Card.astro'
-import rocbaron from '../assets/projects/rocbaron/logo.png'
+import Thronocrigger from '../components/cards/Thronocrigger.astro'
+import ProjectCard from '../components/cards/ProjectCard.astro'
+
+import samuelhebting from '../assets/projects/samuel-hebting/logo.png'
+import amsecurite from '../assets/projects/am-securite/logo.png'
+import petitponey from '../assets/projects/petit-poney/logo.png'
 ---
 
 <!doctype html>
@@ -48,11 +52,29 @@ import rocbaron from '../assets/projects/rocbaron/logo.png'
           <div
             class="card-container flex flex-col w-full m-2 gap-4 py-2 lg:w-1/3"
           >
-            <Card title="test" project=":3" image={rocbaron} />
-            <Card title="Data" project=":3" image={rocbaron} />
-            <Card title="Data" project=":3" image={rocbaron} />
-            <Card title="Data" project=":3" image={rocbaron} />
-            <Card title="Data" project=":3" image={rocbaron} />
+            <Thronocrigger
+              title="Thronocrigger"
+              project="Portfolio redesign"
+              link="/projects/thronocrigger"
+            />
+            <ProjectCard
+              title="Petit Poney Bar"
+              project="Design et déploiement"
+              image={petitponey}
+              link="/projects/petit-poney-bar"
+            />
+            <ProjectCard
+              title="AM Sécurité"
+              project="Design et déploiement"
+              image={amsecurite}
+              link="/projects/am-securite"
+            />
+            <ProjectCard
+              title="Samuel Hebting"
+              project="Design et déploiement de portfolio"
+              image={samuelhebting}
+              link="/projects/samuel-hebting"
+            />
           </div>
         </div>
       </div>
