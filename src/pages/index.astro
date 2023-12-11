@@ -1,19 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
 import HeroCard from '../components/cards/HeroCard.astro'
 import Thronocrigger from '../components/cards/Thronocrigger.astro'
 import ContactCard from '../components/cards/ContactCard.astro'
-
-import rocbaron from '../assets/projects/rocbaron/logo.png'
-import efrei from '../assets/projects/efrei/logo.jpg'
 import ProjectCard from '../components/cards/ProjectCard.astro'
+
+import samuelhebting from '../assets/projects/samuel-hebting/logo.png'
+import amsecurite from '../assets/projects/am-securite/logo.png'
+import petitponey from '../assets/projects/petit-poney/logo.png'
 ---
 
 <Layout title="Amine Rahmane - Accueil">
-  <main class="bg-background">
+  <main class="bg-background group/cards">
     <div
-      class="card-container w-screen h-screen flex flex-col gap-3 py-4 px-2 group/cards lg:grid lg:grid-cols-3 lg:grid-rows-3"
+      class="card-container w-screen h-screen flex flex-col gap-3 pt-4 px-2 group/cards lg:grid lg:grid-cols-3 lg:grid-rows-3"
     >
       <div class="lg:row-span-2 lg:col-span-2">
         <HeroCard />
@@ -27,26 +27,26 @@ import ProjectCard from '../components/cards/ProjectCard.astro'
           link="/projects/thronocrigger"
         />
         <ProjectCard
-          title="Mairie de Rocbaron"
-          project="Redesign et mise en place d'une gestion de contenu"
-          image={rocbaron}
-          link="/projects/mairie-rocbaron"
+          title="Petit Poney Bar"
+          project="Design et déploiement"
+          image={petitponey}
+          link="/projects/petit-poney-bar"
         />
       </div>
       <div
         class="flex flex-col justify-around items-center gap-3 w-full h-auto lg:h-full lg:flex-row lg:col-span-2"
       >
         <ProjectCard
-          title="Efrei"
-          project="Développement d'application interne"
-          image={efrei}
-          link="/projects/efrei"
+          title="AM Sécurité"
+          project="Design et déploiement"
+          image={amsecurite}
+          link="/projects/am-securite"
         />
         <ProjectCard
-          title="Efrei"
-          project="Développement d'application interne"
-          image={rocbaron}
-          link="/projects/efrei"
+          title="Samuel Hebting"
+          project="Design et déploiement de portfolio"
+          image={samuelhebting}
+          link="/projects/samuel-hebting"
         />
       </div>
       <div
@@ -57,6 +57,32 @@ import ProjectCard from '../components/cards/ProjectCard.astro'
         </div>
       </div>
     </div>
+    <!-- <div
+      class="card-container w-screen flex flex-col gap-3 py-4 px-2"
+    >
+      <div
+        class="flex flex-col justify-around items-center gap-3 h-auto lg:h-full lg:grid lg:grid-cols-4"
+      >
+        <ProjectCard
+          title="Petit Poney Bar"
+          project="Design et déploiement"
+          image={petitponey}
+          link="/projects/petit-poney-bar"
+        />
+        <ProjectCard
+          title="AM Sécurité"
+          project="Design et déploiement"
+          image={amsecurite}
+          link="/projects/am-securite"
+        />
+        <ProjectCard
+          title="Samuel Hebting"
+          project="Design et déploiement de portfolio"
+          image={samuelhebting}
+          link="/projects/samuel-hebting"
+        />
+      </div>
+    </div> -->
   </main>
 </Layout>
 
