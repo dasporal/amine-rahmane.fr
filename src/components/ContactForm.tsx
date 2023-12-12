@@ -26,6 +26,7 @@ export const ContactForm = () => {
       data-netlify="true"
       netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
+      data-astro-reload
     >
       <input type="hidden" name="form-name" value="contact" />
       <p className="hidden">
