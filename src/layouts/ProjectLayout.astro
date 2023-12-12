@@ -36,15 +36,15 @@ const { frontmatter } = Astro.props
   <body class="bg-background w-screen">
     <main class="flex justify-center items-center z-20 lg:pb-8">
       <div
-        class="flex flex-col justify-center items-center h-auto w-full gap-4 lg:w-2/3"
+        class="flex flex-col justify-center items-center w-full gap-4 lg:w-2/3"
       >
         <div class="w-full p-3">
           <Header />
         </div>
-        <div class="flex flex-col lg:flex-row w-full h-auto gap-8">
+        <div class="flex flex-col lg:flex-row w-full gap-8">
           <div class="w-full lg:w-2/3">
             <div
-              class="body-content bg-background shadow shadow-primary opacity-100 w-full h-auto flex flex-col flex-wrap rounded-xl bg-cover bg-center px-8 pb-16 gap-3"
+              class="body-content bg-background shadow shadow-primary opacity-100 w-full flex flex-col rounded-xl bg-cover bg-center px-8 pb-16 gap-3"
             >
               <div
                 class="w-full flex flex-col rounded-xl bg-cover bg-center gap-3 p-3 lg:p-8"
@@ -61,7 +61,7 @@ const { frontmatter } = Astro.props
                 </h2>
               </div>
               <div class="lg:mx-28">
-                <div class="prose prose-text min-w-full">
+                <div class="prose prose-text min-w-full h-auto">
                   <slot />
                 </div>
               </div>
@@ -87,13 +87,13 @@ const { frontmatter } = Astro.props
               image={amsecurite}
               link="/projects/am-securite"
             />
-            <ContactCard />
             <ProjectCard
-              title="Samuel Hebting"
-              project="Design et déploiement de portfolio"
-              image={samuelhebting}
-              link="/projects/samuel-hebting"
+            title="Samuel Hebting"
+            project="Design et déploiement de portfolio"
+            image={samuelhebting}
+            link="/projects/samuel-hebting"
             />
+            <ContactCard />
           </div>
         </div>
       </div>
