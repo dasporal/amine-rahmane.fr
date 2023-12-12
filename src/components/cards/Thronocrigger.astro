@@ -6,13 +6,14 @@ interface Props {
   cols?: number | string
   rows?: number | string
   link?: string
+  grid?: boolean
 }
 
-const { title, project, link } = Astro.props
+const { title, project, link, grid } = Astro.props
 ---
 
 <div class="card h-full w-full overflow-hidden">
-  <Card title={title} project={project} link={link}>
+  <Card title={title} project={project} link={link} grid={grid}>
     <div class="avatar"></div>
   </Card>
 </div>
@@ -20,8 +21,8 @@ const { title, project, link } = Astro.props
 <style lang="scss">
   .avatar {
     position: relative;
-    width: clamp(48px, 160px, 200px);
-    height: clamp(48px, 160px, 200px);
+    width: clamp(96px, 160px, 200px);
+    height: clamp(96px, 160px, 200px);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -34,8 +35,8 @@ const { title, project, link } = Astro.props
       top: 0;
       left: 0;
       right: 0;
-      width: clamp(48px, 160px, 200px);
-      height: clamp(48px, 160px, 200px);
+      width: clamp(96px, 160px, 200px);
+      height: clamp(96px, 160px, 200px);
       clip: rect(0, 0, 0, 0);
       overflow: hidden;
       background-size: cover;

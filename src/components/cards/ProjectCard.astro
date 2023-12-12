@@ -8,13 +8,14 @@ interface Props {
   rows?: number | string
   image?: any
   link?: string
+  grid?: boolean
 }
 
-const { title, project, image, link } = Astro.props
+const { title, project, image, link, grid } = Astro.props
 ---
 
 <div class="card h-full w-full overflow-hidden">
-  <Card title={title} project={project} link={link}>
+  <Card title={title} project={project} link={link} grid={grid}>
     <Image src={image} alt=`Image de ${title}` />
   </Card>
 </div>

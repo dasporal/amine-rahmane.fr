@@ -5,7 +5,8 @@ interface Props {
   cols?: number | string
   rows?: number | string
   image?: any
-  link?: string
+  link?: string,
+  grid?: boolean
 }
 
 const {
@@ -15,23 +16,24 @@ const {
   rows = 'auto',
   image,
   link = '#',
+  grid = false,
 } = Astro.props
 ---
 
 <div
-  class=`card cursor-pointer relative w-full h-56 lg:h-full rounded-xl lg:overflow-hidden
+  class=`card cursor-pointer relative w-full h-72 lg:h-full rounded-xl lg:overflow-hidden
   before:rounded-[inherit] before:h-full before:content-[''] before:w-full before:absolute before:top-0 before:left-0 before:z-30 
   before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
   after:rounded-[inherit] after:h-full after:content-[''] after:w-full after:absolute after:top-0 after:left-0 after:z-10 
   after:opacity-0 after:transition-opacity after:duration-500 group-hover/cards:after:opacity-100 group
   bg-radial-gradient`
 >
-  <div class="absolute top-0 left-0 w-full h-full dotted-grid"></div>
+  {grid && <div class="absolute top-0 left-0 w-full h-full dotted-grid" />}
   <a href={link}>
     <div
       class="content relative w-full h-full bg-secondary bg-opacity-30 rounded-[inherit] z-40 m-[1px] bg-cover bg-center
     px-6 py-4
-    flex flex-col flex-wrap items-center justify-around"
+    flex flex-col lg:flex-wrap items-center justify-around"
     >
       <div class="lg:place-self-start">
         <h2 class="text-text font-title text-4xl font-bold uppercase">
@@ -39,7 +41,7 @@ const {
         </h2>
         <div class="text-text font-title text-2xl">{project}</div>
       </div>
-      <div class="lg:row-start-2 lg:row-end-2 lg:col-start-2 lg:col-end-2 w-12 lg:w-40">
+      <div class="w-24 lg:w-40">
         <slot />
       </div>
     </div>

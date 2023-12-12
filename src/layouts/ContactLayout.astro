@@ -9,6 +9,16 @@ import ProjectCard from '../components/cards/ProjectCard.astro'
 import samuelhebting from '../assets/projects/samuel-hebting/logo.png'
 import amsecurite from '../assets/projects/am-securite/logo.png'
 import petitponey from '../assets/projects/petit-poney/logo.png'
+
+interface Props {
+  frontmatter: {
+    project: string
+    company: string
+    image: string
+  }
+}
+
+const { frontmatter } = Astro.props
 ---
 
 <!doctype html>
@@ -19,33 +29,37 @@ import petitponey from '../assets/projects/petit-poney/logo.png'
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Amine Rahmane - À propos de moi</title>
+        <title>Amine Rahmane - À propos de moi</title>
+
     <ViewTransitions />
   </head>
-  <body class="bg-background h-screen w-screen">
+  <body class="bg-background w-screen">
     <main class="flex justify-center items-center z-20 lg:pb-8">
       <div
-        class="flex flex-col justify-center items-center h-full w-full gap-4 lg:w-2/3"
+        class="flex flex-col justify-center items-center w-full gap-4 lg:w-2/3"
       >
         <div class="w-full p-3">
           <Header />
         </div>
-        <div class="flex flex-col lg:flex-row w-full h-full gap-8">
+        <div class="flex flex-col lg:flex-row w-full gap-8">
           <div class="w-full lg:w-2/3">
             <div
-              class="body-content bg-background shadow shadow-primary opacity-100 w-full h-full flex flex-col rounded-xl bg-cover bg-center p-8 gap-3"
+              class="body-content bg-background shadow shadow-primary opacity-100 w-full flex flex-col rounded-xl bg-cover bg-center px-8 pb-16 gap-3"
             >
               <div
-                class=`w-full flex flex-col rounded-xl bg-cover bg-center gap-3 p-3 lg:p-8 `
+                class="w-full flex flex-col rounded-xl bg-cover bg-center gap-3 p-3 lg:p-8"
               >
                 <h1
-                  class="title font-title prose text-background bg-text text-clamp-title w-full"
+                  class="title font-title prose text-background bg-text text-clamp-title tracking-tighter"
                 >
-                  À propos de moi
+                À propos de moi
+
                 </h1>
               </div>
               <div class="lg:mx-28">
-                <slot />
+                <div class="prose prose-text min-w-full h-auto">
+                  <slot />
+                </div>
               </div>
             </div>
           </div>
@@ -70,10 +84,10 @@ import petitponey from '../assets/projects/petit-poney/logo.png'
               link="/projects/am-securite"
             />
             <ProjectCard
-              title="Samuel Hebting"
-              project="Design et déploiement de portfolio"
-              image={samuelhebting}
-              link="/projects/samuel-hebting"
+            title="Samuel Hebting"
+            project="Design et déploiement de portfolio"
+            image={samuelhebting}
+            link="/projects/samuel-hebting"
             />
           </div>
         </div>
@@ -87,10 +101,6 @@ import petitponey from '../assets/projects/petit-poney/logo.png'
       h5,
       h6 {
         @apply font-title;
-      }
-
-      ul {
-        @apply list-disc marker:text-accent font-bold;
       }
 
       main {
