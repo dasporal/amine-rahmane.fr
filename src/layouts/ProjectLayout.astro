@@ -26,10 +26,29 @@ const { frontmatter } = Astro.props
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+		<meta name="description" content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - Projet ${frontmatter.company}` />
+    <meta
+      name="description"
+      content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - À propos de moi`
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={frontmatter.company} />
+    <meta
+      property="og:description"
+      content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - ${frontmatter.company}`
+    />
+    <meta property="og:url" content="https://amine-rahmane.fr" />
+    <meta
+      property="og:image"
+      content="https://amine-rahmane.fr/favicon.png"
+    />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@dasporal">
+    <meta name="twitter:title" content={frontmatter.company}>
+    <meta name="twitter:description" content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - ${frontmatter.company}`>
+    <meta name="twitter:image" content="https://amine-rahmane.fr/favicon.png">    
     <title>Amine Rahmane - {frontmatter.company}</title>
     <ViewTransitions />
   </head>

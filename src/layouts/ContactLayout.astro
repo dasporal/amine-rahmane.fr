@@ -9,17 +9,37 @@ import ProjectCard from '../components/cards/ProjectCard.astro'
 import samuelhebting from '../assets/projects/samuel-hebting/logo.png'
 import amsecurite from '../assets/projects/am-securite/logo.png'
 import petitponey from '../assets/projects/petit-poney/logo.png'
+
+const title = 'À propos de moi'
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - À propos de moi`
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-        <title>Amine Rahmane - À propos de moi</title>
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Portfolio d'Amine Rahmane, développeur et créateur d'identité - À propos de moi"
+    />
+    <meta property="og:url" content="https://amine-rahmane.fr" />
+    <meta
+      property="og:image"
+      content="https://amine-rahmane.fr/favicon.png"
+    />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@dasporal">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content="Portfolio d'Amine Rahmane, développeur et créateur d'identité - À propos de moi">
+    <meta name="twitter:image" content="https://amine-rahmane.fr/favicon.png">    
+    <title>{title}</title>
 
     <ViewTransitions />
   </head>
@@ -42,8 +62,7 @@ import petitponey from '../assets/projects/petit-poney/logo.png'
                 <h1
                   class="title font-title prose text-background bg-text text-clamp-title tracking-tighter"
                 >
-                À propos de moi
-
+                  À propos de moi
                 </h1>
               </div>
               <div class="lg:mx-28">
@@ -74,10 +93,10 @@ import petitponey from '../assets/projects/petit-poney/logo.png'
               link="/projects/am-securite"
             />
             <ProjectCard
-            title="Samuel Hebting"
-            project="Design et déploiement de portfolio"
-            image={samuelhebting}
-            link="/projects/samuel-hebting"
+              title="Samuel Hebting"
+              project="Design et déploiement de portfolio"
+              image={samuelhebting}
+              link="/projects/samuel-hebting"
             />
           </div>
         </div>
