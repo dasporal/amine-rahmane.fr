@@ -26,69 +26,97 @@ const { frontmatter } = Astro.props
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-		<meta name="description" content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - Projet ${frontmatter.company}` />
+    <meta
+      name="description"
+      content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - Projet ${frontmatter.company}`
+    />
     <meta
       name="description"
       content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - À propos de moi`
     />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="generator" content={Astro.generator} />
-    <meta property="og:title" content={frontmatter.company} />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.png"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <meta
+      property="og:title"
+      content={frontmatter.company}
+    />
     <meta
       property="og:description"
       content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - ${frontmatter.company}`
     />
-    <meta property="og:url" content="https://amine-rahmane.fr" />
+    <meta
+      property="og:url"
+      content="https://amine-rahmane.fr"
+    />
     <meta
       property="og:image"
       content="https://amine-rahmane.fr/favicon.png"
     />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@dasporal">
-    <meta name="twitter:title" content={frontmatter.company}>
-    <meta name="twitter:description" content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - ${frontmatter.company}`>
-    <meta name="twitter:image" content="https://amine-rahmane.fr/favicon.png">    
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="twitter:site"
+      content="@dasporal"
+    />
+    <meta
+      name="twitter:title"
+      content={frontmatter.company}
+    />
+    <meta
+      name="twitter:description"
+      content=`Portfolio d'Amine Rahmane, développeur et créateur d'identité - ${frontmatter.company}`
+    />
+    <meta
+      name="twitter:image"
+      content="https://amine-rahmane.fr/favicon.png"
+    />
     <title>Amine Rahmane - {frontmatter.company}</title>
     <ViewTransitions />
   </head>
-  <body class="bg-background w-screen overflow-x-hidden">
-    <main class="flex justify-center items-center z-20 lg:pb-8">
+  <body class="w-screen overflow-x-hidden bg-background">
+    <main class="z-20 flex items-center justify-center lg:pb-8">
       <div
-        class="flex flex-col justify-center items-center w-full gap-4 lg:w-2/3"
-      >
+        class="flex w-full flex-col items-center justify-center gap-4 lg:w-2/3">
         <div class="w-full p-3">
           <Header />
         </div>
-        <div class="flex flex-col lg:flex-row w-full gap-8">
+        <div class="flex w-full flex-col gap-8 px-2 lg:flex-row">
           <div class="w-full lg:w-2/3">
             <div
-              class="body-content bg-background shadow shadow-primary opacity-100 w-full flex flex-col rounded-xl bg-cover bg-center px-8 pb-16 gap-3"
-            >
+              class="body-content flex w-full flex-col gap-3 rounded-xl bg-background bg-cover bg-center px-8 pb-16 opacity-100 shadow shadow-primary">
               <div
-                class="w-full flex flex-col rounded-xl bg-cover bg-center gap-3 p-3 lg:p-8"
-              >
+                class="flex w-full flex-col gap-3 rounded-xl bg-cover bg-center p-3 lg:p-8">
                 <h1
-                  class="title font-title font-bold prose text-background bg-text text-clamp-title"
-                >
+                  class="title prose bg-text font-title text-clamp-title font-bold text-background">
                   {frontmatter.project}
                 </h1>
                 <h2
-                  class="font-title prose prose-text tracking-tight text-clamp-title"
-                >
+                  class="prose prose-text font-title text-clamp-title tracking-tight">
                   {frontmatter.company}
                 </h2>
               </div>
               <div class="lg:mx-28">
-                <div class="prose prose-text min-w-full h-auto">
+                <div class="prose prose-text h-auto min-w-full">
                   <slot />
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="card-container flex flex-col w-full m-2 gap-4 py-2 lg:w-1/3"
-          >
+            class="card-container m-2 flex w-full flex-col gap-4 py-2 px-1 lg:w-1/3">
             <Thronocrigger
               title="Thronocrigger"
               project="Portfolio redesign"
@@ -107,10 +135,10 @@ const { frontmatter } = Astro.props
               link="/projects/am-securite"
             />
             <ProjectCard
-            title="Samuel Hebting"
-            project="Design et déploiement de portfolio"
-            image={samuelhebting}
-            link="/projects/samuel-hebting"
+              title="Samuel Hebting"
+              project="Design et déploiement de portfolio"
+              image={samuelhebting}
+              link="/projects/samuel-hebting"
             />
             <ContactCard />
           </div>
