@@ -1,0 +1,74 @@
+---
+interface Props {
+  title: string
+  project: string
+  link: string
+}
+
+const { title, project, link } = Astro.props
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+---
+
+<div class="card h-full w-full">
+  <a target="_blank" href={link}>
+    <Card>
+      <CardHeader>
+        <CardTitle className="scroll-m-20 text-2xl font-semibold tracking-tight">{title}</CardTitle>
+        <CardDescription>{project}</CardDescription>
+      </CardHeader>
+      <CardContent className="w-full flex justify-center items-center">
+        <div class="avatar w-40 h-48 after:w-40 after:h-48 before:w-40 before:h-48"></div>
+      </CardContent>
+    </Card>
+  </a>
+</div>
+
+<style lang="scss">
+  .avatar {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../assets/projects/thronocrigger/avatar.png');
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &::before {
+      left: -6px;
+      background-image: url('../assets/projects/thronocrigger/avatar-bg-1.png');
+          animation: glitch-effect (random(5) + s) infinite linear alternate-reverse;
+    }
+    &::after {
+      left: 6px;
+      background-image: url('../assets/projects/thronocrigger/avatar-bg-2.png');
+          animation: glitch-effect (random(5) + s) infinite linear alternate-reverse;
+    }
+  }
+
+  $steps: 17;
+  @keyframes glitch-effect {
+    @for $i from 0 through $steps {
+      #{percentage($i*calc(1/$steps))} {
+        clip: rect(random(180) + px, 400px, random(180) + px, 0);
+      }
+    }
+  }
+</style>

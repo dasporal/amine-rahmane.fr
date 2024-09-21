@@ -1,14 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Thronocrigger from "../components/Thronocrigger.astro"
 import { Button } from '@/components/ui/button'
+import { Image } from 'astro:assets'
+import me from '../assets/images/meround2023.png'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import ProjectCard from '@/components/ProjectCard.astro'
+
+import samuelhebting from '../assets/projects/samuel-hebting/logo.svg'
+import amsecurite from '../assets/projects/am-securite/logo.png'
+import reciple from '../assets/projects/reciple/logo.gif'
+import petitponey from '../assets/projects/petit-poney/logo.png'
+import remarqr from '../assets/projects/remarqr/logo.svg'
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="container flex flex-row gap-4 py-4 px-8">
-    <h1
-      class="font-satoshi scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-      <span class="text-background bg-primary px-2">Amine Rahmane,</span> développeur
-      et créateur d'identité.
-    </h1>
+<Layout title="Amine Rahmane | Accueil">
+  <main class="container mx-auto flex flex-col gap-4 py-4 px-8">
+    <div class="flex flex-row justify-center gap-12 py-8">
+			<Image src={me} alt="Une photo d'Amine Rahmane." class="rounded-full w-1/4" />
+			<div>
+
+				<h1
+        class="font-satoshi space-y-2 scroll-m-20 text-4xl font-extrabold tracking-tight lg:leading-tight lg:text-5xl">
+        <span class="text-background bg-primary px-2">Amine Rahmane,</span>
+        développeur et créateur d'identité.
+      </h1>
+			<div>
+				Les logos de mes compétences pref
+			</div>
+		</div>
+    </div>
+		<div class="space-y-4">
+			<h2 class="scroll-m-20 bg-primary text-background px-4 border-b font-satoshi pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+				Projets.
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+				<ProjectCard title='Petit Poney Bar' project='Design et déploiement' link='https://petitponey-bar.fr/' image={petitponey} />
+				<Thronocrigger
+				title="Thronocrigger"
+				project="Portfolio redesign"
+				link="https://thronocrigger.com"
+				/>
+				<ProjectCard title='Samuel Hebting' project='Design et déploiement' link='https://samuel-hebting.fr' image={samuelhebting} />
+				<ProjectCard title='Reciple' project='Wordle like centré autour de la nourriture' link='https://reciple.net' image={reciple} />
+				<ProjectCard title='Remarqr' project='Le feedback. Réimaginé.' link='https://remarqr.dev' image={remarqr} />
+				<ProjectCard title='AM-Sécurité' project='Design et déploiement.' link='https://am-securite.fr/' image={amsecurite} />
+			</div>
+		</div>
   </main>
 </Layout>
