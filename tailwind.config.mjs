@@ -51,7 +51,11 @@ export default {
     				'5': 'hsl(var(--chart-5))'
     			}
     		}
-    	}
+    	},
+			fontFamily: {
+				'satoshi' : ['Satoshi-Variable'],
+				'ibm-plex-sans': ["'IBM Plex Sans', sans-serif"]
+			}
     },
 	plugins: [require("tailwindcss-animate")],
 }
