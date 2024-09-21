@@ -1,17 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Thronocrigger from '../components/Thronocrigger.astro'
+import Layout from '@/layouts/Layout.astro'
 import { Image } from 'astro:assets'
-import me from '../assets/images/meround2023.png'
 import { ModeToggle } from '@/components/ModeToggle'
-import ProjectCard from '@/components/ProjectCard.astro'
+import Footer from '@/components/Footer.astro'
 
-import samuelhebting from '../assets/projects/samuel-hebting/logo.svg'
-import samuelhebtingDark from '../assets/projects/samuel-hebting/logo.png'
-import amsecurite from '../assets/projects/am-securite/logo.png'
-import reciple from '../assets/projects/reciple/logo.gif'
-import petitponey from '../assets/projects/petit-poney/logo.png'
-import remarqr from '../assets/projects/remarqr/logo.svg'
+import ProjectCard from '@/components/ProjectCard.astro'
+import Thronocrigger from '@/components/Thronocrigger.astro'
+
+import me from '@/assets/images/meround2023.png'
+import samuelhebting from '@/assets/projects/samuel-hebting/logo.svg'
+import samuelhebtingDark from '@/assets/projects/samuel-hebting/logo.png'
+import amsecurite from '@/assets/projects/am-securite/logo.png'
+import reciple from '@/assets/projects/reciple/logo.gif'
+import petitponey from '@/assets/projects/petit-poney/logo.png'
+import remarqr from '@/assets/projects/remarqr/logo.svg'
 ---
 
 <script is:inline>
@@ -38,7 +40,7 @@ import remarqr from '../assets/projects/remarqr/logo.svg'
   }
 </script>
 <Layout title="Amine Rahmane | Accueil">
-  <div class="absolute right-6 top-6"><ModeToggle client:load /></div>
+  <div class="fixed right-6 top-6"><ModeToggle client:load /></div>
   <main class="container mx-auto flex flex-col gap-4 py-4 px-8">
     <div class="flex flex-row justify-center gap-12 py-8">
       <Image
@@ -101,4 +103,5 @@ import remarqr from '../assets/projects/remarqr/logo.svg'
       </div>
     </div>
   </main>
+  <Footer />
 </Layout>
