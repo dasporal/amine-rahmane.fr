@@ -4,34 +4,80 @@ interface Props {
   project: string
   link: string
   image: ImageMetadata
+  imageDark?: ImageMetadata
 }
 
-const { title, project, link, image } = Astro.props
+const { title, project, link, image, imageDark } = Astro.props
+
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Image } from "astro:assets"
+} from '@/components/ui/card'
+import { Image } from 'astro:assets'
+
+// Generate a unique ID for this component instance
+const uniqueId = 'image-' + Math.random().toString(36).substr(2, 9)
 ---
 
 <div class="card h-full w-full">
   <a target="_blank" href={link}>
     <Card>
       <CardHeader>
-        <CardTitle className="scroll-m-20 text-2xl font-semibold tracking-tight">{title}</CardTitle>
+        <CardTitle
+          className="scroll-m-20 text-2xl font-semibold tracking-tight">
+          {title}
+        </CardTitle>
         <CardDescription>{project}</CardDescription>
       </CardHeader>
       <CardContent className="w-full flex justify-center items-center">
-        <Image src={image}  alt=`Image de ${title}` class="w-auto h-48"/>
+        <div id={uniqueId} class="image-container">
+          <Image
+            src={image}
+            alt={`Image de ${title}`}
+            class="w-auto h-48 light-mode-image"
+          />
+          {
+            imageDark && (
+              <Image
+                src={imageDark}
+                alt={`Image de ${title} (Dark Mode)`}
+                class="w-auto h-48 dark-mode-image hidden"
+              />
+            )
+          }
+        </div>
       </CardContent>
     </Card>
   </a>
 </div>
 
+<script define:vars={{ uniqueId, hasDarkImage: !!imageDark }}>
+  const container = document.getElementById(uniqueId)
+  if (container) {
+    const lightImage = container.querySelector('.light-mode-image')
+    const darkImage = container.querySelector('.dark-mode-image')
 
-<style>
-</style>
+    function updateImage() {
+      const isDarkMode = document.documentElement.classList.contains('dark')
+      if (hasDarkImage) {
+        lightImage.classList.toggle('hidden', isDarkMode)
+        darkImage.classList.toggle('hidden', !isDarkMode)
+      } else {
+        lightImage.classList.remove('hidden')
+      }
+    }
+
+    // Run on initial load
+    updateImage()
+
+    // Watch for changes to the `dark` class on the document element
+    const observer = new MutationObserver(updateImage)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    })
+  }
+</script>
