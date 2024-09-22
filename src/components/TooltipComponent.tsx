@@ -15,11 +15,11 @@ export const TooltipComponent = ({ image, content, style }) => {
           <img
             src={image.src}
             alt={`${content} logo.`}
-            className="w-12 h-12 animate-fade-in-up md:w-24 md:h-24"
+            className="w-12 h-12 opacity-0 animate-fade-in-up md:w-24 md:h-24"
             style={style}
           />
         </TooltipTrigger>
-        <TooltipContent>{content}</TooltipContent>
+        <TooltipContent className="opacity-100">{content}</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   )
