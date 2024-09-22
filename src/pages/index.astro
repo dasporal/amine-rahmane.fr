@@ -22,6 +22,7 @@ import amsecurite from '@/assets/projects/am-securite/logo.png'
 import reciple from '@/assets/projects/reciple/logo.gif'
 import petitponey from '@/assets/projects/petit-poney/logo.png'
 import remarqr from '@/assets/projects/remarqr/logo.svg'
+import { TooltipComponent } from '@/components/TooltipComponent'
 ---
 
 <script is:inline>
@@ -69,47 +70,47 @@ import remarqr from '@/assets/projects/remarqr/logo.svg'
 
           <div
             class="flex flex-row flex-wrap flex-grow items-center justify-center gap-8">
-            <Image
-              src={laravel}
-              alt="Svelte logo."
-              class="w-12 h-12 fade-in-up md:w-24 md:h-24"
-              style="animation-delay: 100ms;"
+            <TooltipComponent
+              image={laravel}
+              content="Laravel"
+              style={{ animationDelay: '100ms' }}
+              client:load
             />
-            <Image
-              src={typescript}
-              alt="Svelte logo."
-              class="w-12 h-12 fade-in-up md:w-24 md:h-24"
-              style="animation-delay: 150ms;"
+            <TooltipComponent
+              image={typescript}
+              content="Typescript"
+              style={{ animationDelay: '150ms' }}
+              client:load
             />
-            <Image
-              src={svelte}
-              alt="Svelte logo."
-              class="w-12 h-12 fade-in-up md:w-24 md:h-24"
-              style="animation-delay: 200ms;"
+            <TooltipComponent
+              image={svelte}
+              content="Svelte"
+              style={{ animationDelay: '200ms' }}
+              client:load
             />
-            <Image
-              src={react}
-              alt="React logo."
-              class="w-12 h-12 fade-in-up md:w-24 md:h-24"
-              style="animation-delay: 250ms;"
+            <TooltipComponent
+              image={react}
+              content="React"
+              style={{ animationDelay: '250ms' }}
+              client:load
             />
-            <Image
-              src={go}
-              alt="React logo."
-              class="w-12 h-12 fade-in-up md:w-24 md:h-24"
-              style="animation-delay: 300ms;"
+            <TooltipComponent
+              image={go}
+              content="Golang"
+              style={{ animationDelay: '300ms' }}
+              client:load
             />
-            <Image
-              src={terraform}
-              alt="React logo."
-              class="w-12 h-12 fade-in-up md:w-24 md:h-24"
-              style="animation-delay: 350ms;"
+            <TooltipComponent
+              image={terraform}
+              content="Terraform"
+              style={{ animationDelay: '350ms' }}
+              client:load
             />
-            <Image
-              src={docker}
-              alt="React logo."
-              class="w-12 h-12 fade-in-up md:w-24 md:h-24"
-              style="animation-delay: 400ms;"
+            <TooltipComponent
+              image={docker}
+              content="Docker"
+              style={{ animationDelay: '400ms' }}
+              client:load
             />
           </div>
         </div>
