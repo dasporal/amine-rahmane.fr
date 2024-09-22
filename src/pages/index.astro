@@ -49,103 +49,106 @@ import remarqr from '@/assets/projects/remarqr/logo.svg'
 </script>
 <Layout title="Amine Rahmane | Accueil">
   <div class="fixed right-6 top-6"><ModeToggle client:load /></div>
-  <main class="container mx-auto flex flex-col gap-4 py-4 px-8">
-    <div class="flex flex-row justify-center gap-12 py-8">
-      <Image
-        src={me}
-        alt="Une photo d'Amine Rahmane."
-        class="rounded-full w-1/4"
-      />
-      <div class="flex flex-col">
-        <h1
-          class="font-satoshi space-y-2 scroll-m-20 text-4xl font-extrabold tracking-tight lg:leading-tight lg:text-5xl">
-          <span class="text-background bg-primary px-2">Amine Rahmane,</span>
-          développeur et créateur d'identité.
-        </h1>
+  <div class="flex flex-col min-h-screen justify-between">
+    <main class="container mx-auto flex flex-col gap-4 py-4 px-8">
+      <div class="flex flex-row justify-center gap-12 py-8">
+        <Image
+          src={me}
+          alt="Une photo d'Amine Rahmane."
+          class="rounded-full w-1/4"
+        />
+        <div class="flex flex-col">
+          <h1
+            class="font-satoshi space-y-2 scroll-m-20 text-4xl font-extrabold tracking-tight lg:leading-tight lg:text-5xl">
+            <span class="text-background bg-primary px-2">Amine Rahmane,</span>
+            développeur et créateur d'identité.
+          </h1>
 
-        <div class="flex flex-row flex-grow items-center justify-center gap-8">
-          <Image
-            src={laravel}
-            alt="Svelte logo."
-            class="w-24 h-24"
+          <div
+            class="flex flex-row flex-grow items-center justify-center gap-8">
+            <Image
+              src={laravel}
+              alt="Svelte logo."
+              class="w-24 h-24"
+            />
+            <Image
+              src={typescript}
+              alt="Svelte logo."
+              class="w-24 h-24"
+            />
+            <Image
+              src={svelte}
+              alt="Svelte logo."
+              class="w-24 h-24"
+            />
+            <Image
+              src={react}
+              alt="React logo."
+              class="w-24 h-24"
+            />
+            <Image
+              src={go}
+              alt="React logo."
+              class="w-24 h-24"
+            />
+            <Image
+              src={terraform}
+              alt="React logo."
+              class="w-24 h-24"
+            />
+            <Image
+              src={docker}
+              alt="React logo."
+              class="w-24 h-24"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <h2
+          class="scroll-m-20 bg-primary text-background px-4 border-b font-satoshi pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+          Projets.
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+          <ProjectCard
+            title="Petit Poney Bar"
+            project="Design et déploiement"
+            link="https://petitponey-bar.fr/"
+            image={petitponey}
           />
-          <Image
-            src={typescript}
-            alt="Svelte logo."
-            class="w-24 h-24"
+          <Thronocrigger
+            title="Thronocrigger"
+            project="Portfolio redesign"
+            link="https://thronocrigger.com"
           />
-          <Image
-            src={svelte}
-            alt="Svelte logo."
-            class="w-24 h-24"
+          <ProjectCard
+            title="Samuel Hebting"
+            project="Design et déploiement"
+            link="https://samuel-hebting.fr"
+            image={samuelhebting}
+            imageDark={samuelhebtingDark}
           />
-          <Image
-            src={react}
-            alt="React logo."
-            class="w-24 h-24"
+          <ProjectCard
+            title="Reciple"
+            project="Wordle like centré autour de la nourriture"
+            link="https://reciple.net"
+            image={reciple}
           />
-          <Image
-            src={go}
-            alt="React logo."
-            class="w-24 h-24"
+          <ProjectCard
+            title="Remarqr"
+            project="Le feedback. Réimaginé."
+            link="https://remarqr.dev"
+            image={remarqr}
           />
-          <Image
-            src={terraform}
-            alt="React logo."
-            class="w-24 h-24"
-          />
-          <Image
-            src={docker}
-            alt="React logo."
-            class="w-24 h-24"
+          <ProjectCard
+            title="AM-Sécurité"
+            project="Design et déploiement."
+            link="https://am-securite.fr/"
+            image={amsecurite}
           />
         </div>
       </div>
-    </div>
-    <div class="space-y-4">
-      <h2
-        class="scroll-m-20 bg-primary text-background px-4 border-b font-satoshi pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-        Projets.
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-        <ProjectCard
-          title="Petit Poney Bar"
-          project="Design et déploiement"
-          link="https://petitponey-bar.fr/"
-          image={petitponey}
-        />
-        <Thronocrigger
-          title="Thronocrigger"
-          project="Portfolio redesign"
-          link="https://thronocrigger.com"
-        />
-        <ProjectCard
-          title="Samuel Hebting"
-          project="Design et déploiement"
-          link="https://samuel-hebting.fr"
-          image={samuelhebting}
-          imageDark={samuelhebtingDark}
-        />
-        <ProjectCard
-          title="Reciple"
-          project="Wordle like centré autour de la nourriture"
-          link="https://reciple.net"
-          image={reciple}
-        />
-        <ProjectCard
-          title="Remarqr"
-          project="Le feedback. Réimaginé."
-          link="https://remarqr.dev"
-          image={remarqr}
-        />
-        <ProjectCard
-          title="AM-Sécurité"
-          project="Design et déploiement."
-          link="https://am-securite.fr/"
-          image={amsecurite}
-        />
-      </div>
-    </div>
-  </main>
-  <Footer />
+    </main>
+    <Footer />
+  </div>
 </Layout>
