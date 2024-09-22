@@ -54,7 +54,7 @@ const uniqueId = 'image-' + Math.random().toString(36).substr(2, 9)
   </a>
 </div>
 
-<script define:vars={{ uniqueId, hasDarkImage: !!imageDark }}>
+<script is:inline define:vars={{ uniqueId, hasDarkImage: !!imageDark }}>
   const container = document.getElementById(uniqueId)
   if (container) {
     const lightImage = container.querySelector('.light-mode-image')

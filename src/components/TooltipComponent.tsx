@@ -1,13 +1,19 @@
-import React from 'react'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { Image } from 'astro:assets'
 
-export const TooltipComponent = ({ image, content, style }) => {
+export const TooltipComponent = ({
+  image,
+  content,
+  style,
+}: {
+  image: ImageMetadata
+  content: string
+  style: React.CSSProperties
+}) => {
   return (
     <TooltipProvider delayDuration={50}>
       <Tooltip>

@@ -1,5 +1,3 @@
-import { transform } from 'typescript';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ['class'],
@@ -56,14 +54,14 @@ export default {
         },
       },
       animation: {
-        'fade-in-up': 'fadeInUp 0.4s ease-out forwards'
+        'fade-in-up': 'fadeInUp 0.4s ease-out forwards',
       },
       keyframes: {
         fadeInUp: {
           '0%': { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0px)' },
-        }
-      }
+        },
+      },
     },
     fontFamily: {
       satoshi: ['Satoshi-Variable'],
