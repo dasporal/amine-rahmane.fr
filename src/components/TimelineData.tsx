@@ -24,6 +24,9 @@ export default function TimelineData() {
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Création de Reciple, un jeu similaire à Wordle centré sur la nourriture, avec Svelte.
           </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          Développement de Remarqr, une solution SaaS conçue pour simplifier la gestion des annotations et améliorer la collaboration entre développeurs et parties prenantes métier.
+          </p>
           <div className="grid grid-cols-2 gap-4">
             <img
               src={reciple.src}
@@ -48,7 +51,7 @@ export default function TimelineData() {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Développeur Web Fullstack chez Santevet. Contribution au développement de l'ERP et création de nouveaux microservices en Python et Go sur AWS.
+            Développeur Web Fullstack freelance chez Santevet. Contributions au développement de l'ERP et création de nouveaux microservices en Python et Go sur AWS.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Modernisation d'un projet PHP legacy pour AdopteUnePiece et création de plusieurs sites pour divers clients.
