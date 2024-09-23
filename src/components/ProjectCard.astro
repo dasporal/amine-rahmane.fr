@@ -19,11 +19,13 @@ import {
 import { Image } from 'astro:assets'
 
 // Generate a unique ID for this component instance
-const uniqueId = 'image-' + Math.random().toString(36).substr(2, 9)
+const uniqueId = 'image-' + Math.random().toString(36).substring(2, 9)
 ---
 
 <div class="card h-full w-full">
-  <a target="_blank" href={link}>
+  <a
+    target="_blank"
+    href={link}>
     <Card>
       <CardHeader>
         <CardTitle
@@ -33,7 +35,9 @@ const uniqueId = 'image-' + Math.random().toString(36).substr(2, 9)
         <CardDescription>{project}</CardDescription>
       </CardHeader>
       <CardContent className="w-full flex justify-center items-center">
-        <div id={uniqueId} class="image-container">
+        <div
+          id={uniqueId}
+          class="image-container">
           <Image
             src={image}
             alt={`Image de ${title}`}
