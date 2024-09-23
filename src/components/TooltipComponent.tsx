@@ -4,6 +4,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import type { ImageMetadata } from 'astro'
 
 export const TooltipComponent = ({
   image,
