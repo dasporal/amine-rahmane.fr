@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import { ModeToggle } from '@/components/ModeToggle'
+import { LanguageToggle } from '@/components/LanguageToggle'
 import Footer from '@/components/Footer.astro'
 
 import TimelineData from '@/components/TimelineData'
@@ -51,7 +52,11 @@ import { TooltipComponent } from '@/components/TooltipComponent'
   }
 </script>
 <Layout title="Amine Rahmane | Accueil">
-  <div class="fixed z-50 right-6 top-6"><ModeToggle client:load /></div>
+  <div
+    class="fixed flex flex-row gap-2 justify-center items-center z-50 right-6 top-6">
+    <LanguageToggle client:load />
+    <ModeToggle client:load />
+  </div>
   <div class="flex flex-col w-full min-h-screen justify-between">
     <main class="container mx-auto flex flex-col gap-4 py-4 px-8">
       <div
