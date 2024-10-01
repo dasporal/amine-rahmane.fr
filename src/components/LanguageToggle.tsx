@@ -16,7 +16,7 @@ export function LanguageToggle() {
 
   return (
     <Button onClick={toggleTheme} variant="outline" size="icon">
-      {language === 'en' ? 'EN' : 'FR'}
+      {language === 'en' ? 'FR' : 'EN'}
       <span className="sr-only">Toggle language</span>
     </Button>
   )
