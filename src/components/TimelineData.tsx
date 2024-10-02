@@ -65,6 +65,16 @@ export default function TimelineData() {
             Modernisation d'un projet PHP legacy pour AdopteUnePiece et création
             de plusieurs sites pour divers clients.
           </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Création{' '}
+            <a
+              href="https://github.com/dasporal/svelte-authkit"
+              className="text-orange-700 hover:underline hover:underline-offset-2">
+              d'une librairie open-source
+            </a>{' '}
+            pour intégrer l'authentification via AuthKit de WorkOS dans des
+            projets Svelte.
+          </p>
           <div className="grid grid-cols-2 gap-4">
             <img
               src={santevet.src}
