@@ -12,9 +12,60 @@ import bacchus from '@/assets/projects/bacchus/hero.png'
 import petitponey from '@/assets/projects/petit-poney/hero.png'
 import thronocrigger from '@/assets/projects/thronocrigger/hero.png'
 import samuel from '@/assets/projects/samuel-hebting/hero.png'
+import cedrus from '@/assets/projects/cedrus/hero.png'
 
 export default function TimelineDataEn() {
   const data = [
+    {
+      title: '2025',
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-6">
+            <strong>Lead Front-End Developer</strong> at{' '}
+            <a
+              href="https://cedrus.solutions"
+              target="_blank"
+              rel="noreferrer"
+              className="text-orange-700 hover:underline hover:underline-offset-2">
+              Cedrus Solutions
+            </a>
+            . Development of an advanced SaaS application with{' '}
+            <strong>Next.js</strong> and complete redesign of the showcase
+            website.
+          </p>
+
+          <div className="mb-6">
+            <ul className="text-neutral-700 dark:text-neutral-300 text-xs md:text-sm space-y-2 mb-4">
+              <li className="flex items-start">
+                <span className="text-orange-600 mr-2 mt-1">•</span>
+                <span>
+                  <strong>WebGL Data Visualization</strong>: High-performance
+                  charts with DeckGL and VisX, smooth handling of +20k data
+                  points with optimized zoom/pan, interactive tooltips and
+                  advanced selection system
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-6">
+            Complete overhaul of <strong>ShowMe Events</strong> applications
+            with automated deployments on Cloudflare Pages and Vercel,
+            significant performance improvements and enhanced user experience.
+          </p>
+
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src={cedrus.src}
+              alt="Cedrus Solutions - SaaS application with WebGL visualizations"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md hover:shadow-lg transition-shadow"
+            />
+          </div>
+        </div>
+      ),
+    },
     {
       title: '2024',
       content: (
