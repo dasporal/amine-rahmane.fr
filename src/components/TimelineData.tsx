@@ -49,9 +49,8 @@ export default function TimelineData() {
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-6">
             Refonte complète des applications <strong>ShowMe Events</strong>{' '}
-            avec déploiements automatisés sur Cloudflare Pages et Vercel,
-            amélioration significative des performances et de l'expérience
-            utilisateur.
+            avec déploiements automatisés sur Cloudflare Pages, amélioration
+            significative des performances et de l'expérience utilisateur.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
