@@ -50,8 +50,8 @@ export default function TimelineDataEn() {
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-6">
             Complete overhaul of <strong>ShowMe Events</strong> applications
-            with automated deployments on Cloudflare Pages and Vercel,
-            significant performance improvements and enhanced user experience.
+            with automated deployments on Cloudflare Pages, significant
+            performance improvements and enhanced user experience.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
