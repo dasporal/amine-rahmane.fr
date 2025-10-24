@@ -13,6 +13,7 @@ import petitponey from '@/assets/projects/petit-poney/hero.png'
 import thronocrigger from '@/assets/projects/thronocrigger/hero.png'
 import samuel from '@/assets/projects/samuel-hebting/hero.png'
 import cedrus from '@/assets/projects/cedrus/hero.png'
+import showme from '@/assets/projects/showme-events/hero.png'
 
 export default function TimelineDataEn() {
   const data = [
@@ -58,6 +59,13 @@ export default function TimelineDataEn() {
             <img
               src={cedrus.src}
               alt="Cedrus Solutions - SaaS application with WebGL visualizations"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md hover:shadow-lg transition-shadow"
+            />
+            <img
+              src={showme.src}
+              alt="ShowMe Events"
               width={500}
               height={500}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md hover:shadow-lg transition-shadow"
