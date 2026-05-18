@@ -97,14 +97,14 @@ export default function TimelineDataEn() {
               alt="Reciple - Wordle-like food game"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
             <img
               src={remarqr.src}
               alt="Remarqr - Authentication tool with Svelte Authkit"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
           </div>
         </div>
@@ -137,28 +137,28 @@ export default function TimelineDataEn() {
               alt="Santevet - ERP and microservices on AWS"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
             <img
               src={thronocrigger.src}
               alt="Thronocrigger - Website development"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
             <img
               src={samuel.src}
               alt="Samuel Hebting - Professional website"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
             <img
               src={workos.src}
               alt="Svelte Authkit - Authentication tool"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
           </div>
         </div>
@@ -183,28 +183,28 @@ export default function TimelineDataEn() {
               alt="EFREI - Career Center development"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
             <img
               src={petitponey.src}
               alt="Le Petit Poney Bar - Website"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
             <img
               src={amsecurite.src}
               alt="Teksial - Workflow improvements with Symfony and React"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
             <img
               src={teksial.src}
               alt="Teksial - Workflow improvements with Symfony and React"
               width={500}
               height={500}
-              className="rounded-lg object-contain px-8 h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-contain px-8 h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
           </div>
         </div>
@@ -228,14 +228,14 @@ export default function TimelineDataEn() {
               alt="Short-Edition - Community products"
               width={500}
               height={500}
-              className="rounded-lg object-contain px-8 h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-contain px-8 h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
             <img
               src={bacchus.src}
               alt="Bacchus Festival - Website"
               width={500}
               height={500}
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-sm"
             />
           </div>
         </div>

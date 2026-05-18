@@ -34,6 +34,8 @@ import {
 </div>
 
 <style lang="scss">
+  @use 'sass:math';
+
   .avatar {
     position: relative;
     background-size: cover;
@@ -57,20 +59,22 @@ import {
     &::before {
       left: -6px;
       background-image: url('../assets/projects/thronocrigger/avatar-bg-1.png');
-      animation: glitch-effect (random(5) + s) infinite linear alternate-reverse;
+      animation: glitch-effect (math.random(5) + s) infinite linear
+        alternate-reverse;
     }
     &::after {
       left: 6px;
       background-image: url('../assets/projects/thronocrigger/avatar-bg-2.png');
-      animation: glitch-effect (random(5) + s) infinite linear alternate-reverse;
+      animation: glitch-effect (math.random(5) + s) infinite linear
+        alternate-reverse;
     }
   }
 
   $steps: 17;
   @keyframes glitch-effect {
     @for $i from 0 through $steps {
-      #{percentage($i*calc(1/$steps))} {
-        clip: rect(random(180) + px, 400px, random(180) + px, 0);
+      #{math.percentage($i*calc(1/$steps))} {
+        clip: rect(math.random(180) + px, 400px, math.random(180) + px, 0);
       }
     }
   }
