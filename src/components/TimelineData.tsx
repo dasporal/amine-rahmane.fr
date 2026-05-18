@@ -13,10 +13,40 @@ import petitponey from '@/assets/projects/petit-poney/hero.png'
 import thronocrigger from '@/assets/projects/thronocrigger/hero.png'
 import samuel from '@/assets/projects/samuel-hebting/hero.png'
 import cedrus from '@/assets/projects/cedrus/hero.png'
+import farvoice from '@/assets/projects/farvoice/hero.jpg'
 import showme from '@/assets/projects/showme-events/hero.png'
 
 export default function TimelineData() {
   const data = [
+    {
+      title: '2026',
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-6">
+            <strong>Développeur</strong> pour{' '}
+            <a
+              href="https://farvoicegaming.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-orange-700 hover:underline hover:underline-offset-2">
+              Farvoice Gaming
+            </a>
+            , équipe e-sport française. Développement du site vitrine avec Astro
+            et backoffice avec PayloadCMS.
+          </p>
+
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src={farvoice.src}
+              alt="Farvoice Gaming - Equipe E-Sport"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md hover:shadow-lg transition-shadow"
+            />
+          </div>
+        </div>
+      ),
+    },
     {
       title: '2025',
       content: (
@@ -49,8 +79,8 @@ export default function TimelineData() {
           </div>
 
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-6">
-            Refonte complète des applications <strong>ShowMe Events</strong>{' '}
-            avec déploiements automatisés sur Cloudflare Pages, amélioration
+            Refonte complète des applications <strong>ShowMe Events</strong> en
+            SvelteKit et NextJS avec déploiements automatisés, amélioration
             significative des performances et de l'expérience utilisateur.
           </p>
 
